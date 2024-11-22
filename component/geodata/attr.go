@@ -3,7 +3,7 @@ package geodata
 import (
 	"strings"
 
-	"github.com/ruk1ng001/mihomo-mod/component/geodata/router"
+	"github.com/Ruk1ng001/mihomo-mod/component/geodata/router"
 )
 
 type AttributeList struct {

@@ -7,10 +7,10 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/ruk1ng001/mihomo-mod/component/process"
-	"github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/constant/features"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/component/process"
+	"github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/constant/features"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 
 	"github.com/metacubex/sing-tun"
 	"github.com/sagernet/netlink"

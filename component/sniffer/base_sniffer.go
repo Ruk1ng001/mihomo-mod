@@ -3,9 +3,9 @@ package sniffer
 import (
 	"errors"
 
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	"github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/constant/sniffer"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	"github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/constant/sniffer"
 )
 
 type SnifferConfig struct {

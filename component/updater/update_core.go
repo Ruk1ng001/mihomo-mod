@@ -15,9 +15,9 @@ import (
 	"sync"
 	"time"
 
-	mihomoHttp "github.com/ruk1ng001/mihomo-mod/component/http"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	mihomoHttp "github.com/Ruk1ng001/mihomo-mod/component/http"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 
 	"github.com/klauspost/cpuid/v2"
 )
@@ -41,8 +41,8 @@ var (
 	backupExeName  string // 备份文件名
 	updateExeName  string // 更新后的可执行文件
 
-	baseURL       string = "https://github.com/ruk1ng001/mihomo-mod/releases/download/Prerelease-Alpha/mihomo"
-	versionURL    string = "https://github.com/ruk1ng001/mihomo-mod/releases/download/Prerelease-Alpha/version.txt"
+	baseURL       string = "https://github.com/Ruk1ng001/mihomo-mod/releases/download/Prerelease-Alpha/mihomo"
+	versionURL    string = "https://github.com/Ruk1ng001/mihomo-mod/releases/download/Prerelease-Alpha/version.txt"
 	packageURL    string
 	latestVersion string
 )
@@ -52,8 +52,8 @@ func init() {
 		amd64Compatible = "-compatible"
 	}
 	if !strings.HasPrefix(C.Version, "alpha") {
-		baseURL = "https://github.com/ruk1ng001/mihomo-mod/releases/latest/download/mihomo"
-		versionURL = "https://github.com/ruk1ng001/mihomo-mod/releases/latest/download/version.txt"
+		baseURL = "https://github.com/Ruk1ng001/mihomo-mod/releases/latest/download/mihomo"
+		versionURL = "https://github.com/Ruk1ng001/mihomo-mod/releases/latest/download/version.txt"
 	}
 }
 

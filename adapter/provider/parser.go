@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/structure"
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	"github.com/ruk1ng001/mihomo-mod/component/resource"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	types "github.com/ruk1ng001/mihomo-mod/constant/provider"
+	"github.com/Ruk1ng001/mihomo-mod/common/structure"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	"github.com/Ruk1ng001/mihomo-mod/component/resource"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	types "github.com/Ruk1ng001/mihomo-mod/constant/provider"
 
 	"github.com/dlclark/regexp2"
 )

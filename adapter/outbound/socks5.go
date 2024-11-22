@@ -10,11 +10,11 @@ import (
 	"net/netip"
 	"strconv"
 
-	"github.com/ruk1ng001/mihomo-mod/component/ca"
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
+	"github.com/Ruk1ng001/mihomo-mod/component/ca"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/Ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/transport/socks5"
 )
 
 type Socks5 struct {

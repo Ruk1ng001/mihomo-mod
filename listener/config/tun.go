@@ -3,8 +3,8 @@ package config
 import (
 	"net/netip"
 
-	"github.com/ruk1ng001/mihomo-mod/common/nnip"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/common/nnip"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 
 	"golang.org/x/exp/slices"
 )

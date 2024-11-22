@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	"github.com/ruk1ng001/mihomo-mod/component/trie"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	"github.com/Ruk1ng001/mihomo-mod/component/trie"
 
 	"github.com/metacubex/randv2"
 	"github.com/miekg/dns"

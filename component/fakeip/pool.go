@@ -6,9 +6,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ruk1ng001/mihomo-mod/common/nnip"
-	"github.com/ruk1ng001/mihomo-mod/component/profile/cachefile"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/common/nnip"
+	"github.com/Ruk1ng001/mihomo-mod/component/profile/cachefile"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 const (

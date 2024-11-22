@@ -7,16 +7,16 @@ import (
 	"net"
 	"strconv"
 
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/transport/shadowsocks/core"
-	"github.com/ruk1ng001/mihomo-mod/transport/shadowsocks/shadowaead"
-	"github.com/ruk1ng001/mihomo-mod/transport/shadowsocks/shadowstream"
-	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
-	"github.com/ruk1ng001/mihomo-mod/transport/ssr/obfs"
-	"github.com/ruk1ng001/mihomo-mod/transport/ssr/protocol"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/Ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/transport/shadowsocks/core"
+	"github.com/Ruk1ng001/mihomo-mod/transport/shadowsocks/shadowaead"
+	"github.com/Ruk1ng001/mihomo-mod/transport/shadowsocks/shadowstream"
+	"github.com/Ruk1ng001/mihomo-mod/transport/socks5"
+	"github.com/Ruk1ng001/mihomo-mod/transport/ssr/obfs"
+	"github.com/Ruk1ng001/mihomo-mod/transport/ssr/protocol"
 )
 
 type ShadowSocksR struct {
@@ -129,7 +129,7 @@ func (ssr *ShadowSocksR) SupportDialerProxy() string {
 
 func NewShadowSocksR(option ShadowSocksROption) (*ShadowSocksR, error) {
 	// SSR protocol compatibility
-	// https://github.com/ruk1ng001/mihomo-mod/pull/2056
+	// https://github.com/Ruk1ng001/mihomo-mod/pull/2056
 	if option.Cipher == "none" {
 		option.Cipher = "dummy"
 	}

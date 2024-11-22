@@ -1,8 +1,8 @@
 package common
 
 import (
-	"github.com/ruk1ng001/mihomo-mod/transport/tuic/congestion"
-	congestionv2 "github.com/ruk1ng001/mihomo-mod/transport/tuic/congestion_v2"
+	"github.com/Ruk1ng001/mihomo-mod/transport/tuic/congestion"
+	congestionv2 "github.com/Ruk1ng001/mihomo-mod/transport/tuic/congestion_v2"
 
 	"github.com/metacubex/quic-go"
 	c "github.com/metacubex/quic-go/congestion"

@@ -6,8 +6,8 @@ import (
 	"net"
 	"net/http"
 
-	"github.com/ruk1ng001/mihomo-mod/component/ca"
-	"github.com/ruk1ng001/mihomo-mod/transport/vmess"
+	"github.com/Ruk1ng001/mihomo-mod/component/ca"
+	"github.com/Ruk1ng001/mihomo-mod/transport/vmess"
 )
 
 // Option is options of websocket obfs

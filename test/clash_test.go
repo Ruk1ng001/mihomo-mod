@@ -16,13 +16,13 @@ import (
 	"testing"
 	"time"
 
+	"github.com/Ruk1ng001/mihomo-mod/adapter/outbound"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/hub/executor"
+	"github.com/Ruk1ng001/mihomo-mod/transport/socks5"
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/client"
 	"github.com/docker/go-connections/nat"
-	"github.com/ruk1ng001/mihomo-mod/adapter/outbound"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/hub/executor"
-	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

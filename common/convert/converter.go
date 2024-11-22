@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 // ConvertsV2Ray convert V2Ray subscribe proxies data to mihomo proxies config

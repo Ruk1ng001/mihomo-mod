@@ -14,14 +14,14 @@ import (
 	"strings"
 	"time"
 
+	"github.com/Ruk1ng001/mihomo-mod/common/atomic"
+	"github.com/Ruk1ng001/mihomo-mod/common/queue"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	"github.com/Ruk1ng001/mihomo-mod/component/ca"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 	"github.com/puzpuzpuz/xsync/v3"
-	"github.com/ruk1ng001/mihomo-mod/common/atomic"
-	"github.com/ruk1ng001/mihomo-mod/common/queue"
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	"github.com/ruk1ng001/mihomo-mod/component/ca"
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/log"
 )
 
 var UnifiedDelay = atomic.NewBool(false)

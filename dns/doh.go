@@ -16,12 +16,12 @@ import (
 	"sync"
 	"time"
 
+	"github.com/Ruk1ng001/mihomo-mod/component/ca"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 	"github.com/metacubex/quic-go"
 	"github.com/metacubex/quic-go/http3"
 	D "github.com/miekg/dns"
-	"github.com/ruk1ng001/mihomo-mod/component/ca"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/log"
 	"golang.org/x/exp/slices"
 	"golang.org/x/net/http2"
 )

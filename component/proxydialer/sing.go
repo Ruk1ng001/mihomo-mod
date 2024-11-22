@@ -4,7 +4,7 @@ import (
 	"context"
 	"net"
 
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"

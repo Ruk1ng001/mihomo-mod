@@ -8,7 +8,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
+	"github.com/Ruk1ng001/mihomo-mod/transport/socks5"
 
 	"golang.org/x/sys/unix"
 )

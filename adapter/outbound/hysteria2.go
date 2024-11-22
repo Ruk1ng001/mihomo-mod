@@ -10,14 +10,14 @@ import (
 	"strconv"
 	"time"
 
-	CN "github.com/ruk1ng001/mihomo-mod/common/net"
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	"github.com/ruk1ng001/mihomo-mod/component/ca"
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/log"
-	tuicCommon "github.com/ruk1ng001/mihomo-mod/transport/tuic/common"
+	CN "github.com/Ruk1ng001/mihomo-mod/common/net"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	"github.com/Ruk1ng001/mihomo-mod/component/ca"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/Ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/log"
+	tuicCommon "github.com/Ruk1ng001/mihomo-mod/transport/tuic/common"
 
 	"github.com/metacubex/sing-quic/hysteria2"
 

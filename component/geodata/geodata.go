@@ -3,8 +3,8 @@ package geodata
 import (
 	"fmt"
 
-	"github.com/ruk1ng001/mihomo-mod/component/geodata/router"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/component/geodata/router"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 type loader struct {

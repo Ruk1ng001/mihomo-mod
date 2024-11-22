@@ -3,9 +3,9 @@ package inbound
 import (
 	"fmt"
 
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	LT "github.com/ruk1ng001/mihomo-mod/listener/tunnel"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	LT "github.com/Ruk1ng001/mihomo-mod/listener/tunnel"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 type TunnelOption struct {

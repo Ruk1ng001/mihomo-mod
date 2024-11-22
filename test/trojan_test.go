@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/Ruk1ng001/mihomo-mod/adapter/outbound"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 	"github.com/docker/docker/api/types/container"
-	"github.com/ruk1ng001/mihomo-mod/adapter/outbound"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
 	"github.com/stretchr/testify/require"
 )
 

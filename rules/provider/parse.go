@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/structure"
-	"github.com/ruk1ng001/mihomo-mod/component/resource"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	P "github.com/ruk1ng001/mihomo-mod/constant/provider"
+	"github.com/Ruk1ng001/mihomo-mod/common/structure"
+	"github.com/Ruk1ng001/mihomo-mod/component/resource"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	P "github.com/Ruk1ng001/mihomo-mod/constant/provider"
 )
 
 var (

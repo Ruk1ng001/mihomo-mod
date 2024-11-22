@@ -3,8 +3,8 @@
 package outboundgroup
 
 import (
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/constant/provider"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/constant/provider"
 )
 
 type ProxyGroup interface {

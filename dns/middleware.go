@@ -5,13 +5,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/lru"
-	"github.com/ruk1ng001/mihomo-mod/common/nnip"
-	"github.com/ruk1ng001/mihomo-mod/component/fakeip"
-	R "github.com/ruk1ng001/mihomo-mod/component/resolver"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/context"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/common/lru"
+	"github.com/Ruk1ng001/mihomo-mod/common/nnip"
+	"github.com/Ruk1ng001/mihomo-mod/component/fakeip"
+	R "github.com/Ruk1ng001/mihomo-mod/component/resolver"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/context"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 
 	D "github.com/miekg/dns"
 )

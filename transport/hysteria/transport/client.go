@@ -8,11 +8,11 @@ import (
 
 	"github.com/metacubex/quic-go"
 
-	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/conns/faketcp"
-	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/conns/udp"
-	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/conns/wechat"
-	obfsPkg "github.com/ruk1ng001/mihomo-mod/transport/hysteria/obfs"
-	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/utils"
+	"github.com/Ruk1ng001/mihomo-mod/transport/hysteria/conns/faketcp"
+	"github.com/Ruk1ng001/mihomo-mod/transport/hysteria/conns/udp"
+	"github.com/Ruk1ng001/mihomo-mod/transport/hysteria/conns/wechat"
+	obfsPkg "github.com/Ruk1ng001/mihomo-mod/transport/hysteria/obfs"
+	"github.com/Ruk1ng001/mihomo-mod/transport/hysteria/utils"
 )
 
 type ClientTransport struct{}

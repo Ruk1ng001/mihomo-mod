@@ -3,8 +3,8 @@ package protocol
 import (
 	"net"
 
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
-	"github.com/ruk1ng001/mihomo-mod/common/pool"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
+	"github.com/Ruk1ng001/mihomo-mod/common/pool"
 )
 
 type PacketConn struct {

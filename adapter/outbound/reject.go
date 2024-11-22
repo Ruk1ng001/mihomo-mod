@@ -6,9 +6,9 @@ import (
 	"net"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/buf"
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/common/buf"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 type Reject struct {

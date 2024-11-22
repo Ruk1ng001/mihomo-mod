@@ -6,11 +6,11 @@ import (
 	"net/netip"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/atomic"
-	"github.com/ruk1ng001/mihomo-mod/common/buf"
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/common/atomic"
+	"github.com/Ruk1ng001/mihomo-mod/common/buf"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 
 	"github.com/gofrs/uuid/v5"
 )

@@ -20,7 +20,7 @@ import (
 	"github.com/metacubex/gopacket"
 	"github.com/metacubex/gopacket/layers"
 
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
 )
 
 var (

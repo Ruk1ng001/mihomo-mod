@@ -3,7 +3,7 @@ package net
 import (
 	"net"
 
-	"github.com/ruk1ng001/mihomo-mod/common/buf"
+	"github.com/Ruk1ng001/mihomo-mod/common/buf"
 )
 
 var _ ExtendedConn = (*CachedConn)(nil)

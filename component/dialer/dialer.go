@@ -12,9 +12,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/component/keepalive"
-	"github.com/ruk1ng001/mihomo-mod/component/resolver"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/component/keepalive"
+	"github.com/Ruk1ng001/mihomo-mod/component/resolver"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 const (

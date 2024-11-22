@@ -3,7 +3,7 @@ package vless
 import (
 	"net"
 
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
 
 	"github.com/gofrs/uuid/v5"
 )

@@ -12,10 +12,10 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/ruk1ng001/mihomo-mod/component/ca"
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/component/ca"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/Ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 type Http struct {

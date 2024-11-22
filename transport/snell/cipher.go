@@ -4,7 +4,7 @@ import (
 	"crypto/aes"
 	"crypto/cipher"
 
-	"github.com/ruk1ng001/mihomo-mod/transport/shadowsocks/shadowaead"
+	"github.com/Ruk1ng001/mihomo-mod/transport/shadowsocks/shadowaead"
 
 	"golang.org/x/crypto/argon2"
 	"golang.org/x/crypto/chacha20poly1305"

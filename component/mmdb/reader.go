@@ -5,8 +5,8 @@ import (
 	"net"
 	"strings"
 
+	"github.com/Ruk1ng001/mihomo-mod/log"
 	"github.com/oschwald/maxminddb-golang"
-	"github.com/ruk1ng001/mihomo-mod/log"
 )
 
 type geoip2Country struct {

@@ -1,7 +1,7 @@
 package auth
 
 import (
-	"github.com/ruk1ng001/mihomo-mod/component/auth"
+	"github.com/Ruk1ng001/mihomo-mod/component/auth"
 )
 
 type authStore struct {

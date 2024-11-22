@@ -3,12 +3,12 @@ package common
 import (
 	"fmt"
 
-	"github.com/ruk1ng001/mihomo-mod/component/geodata"
-	_ "github.com/ruk1ng001/mihomo-mod/component/geodata/memconservative"
-	"github.com/ruk1ng001/mihomo-mod/component/geodata/router"
-	_ "github.com/ruk1ng001/mihomo-mod/component/geodata/standard"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/component/geodata"
+	_ "github.com/Ruk1ng001/mihomo-mod/component/geodata/memconservative"
+	"github.com/Ruk1ng001/mihomo-mod/component/geodata/router"
+	_ "github.com/Ruk1ng001/mihomo-mod/component/geodata/standard"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 type GEOSITE struct {

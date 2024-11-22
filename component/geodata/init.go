@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/atomic"
-	mihomoHttp "github.com/ruk1ng001/mihomo-mod/component/http"
-	"github.com/ruk1ng001/mihomo-mod/component/mmdb"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/common/atomic"
+	mihomoHttp "github.com/Ruk1ng001/mihomo-mod/component/http"
+	"github.com/Ruk1ng001/mihomo-mod/component/mmdb"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 var (

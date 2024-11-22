@@ -19,10 +19,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/buf"
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
-	tlsC "github.com/ruk1ng001/mihomo-mod/component/tls"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/common/buf"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
+	tlsC "github.com/Ruk1ng001/mihomo-mod/component/tls"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 
 	"github.com/gobwas/ws"
 	"github.com/gobwas/ws/wsutil"

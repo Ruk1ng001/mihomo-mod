@@ -3,9 +3,9 @@ package redir
 import (
 	"net"
 
-	"github.com/ruk1ng001/mihomo-mod/adapter/inbound"
-	"github.com/ruk1ng001/mihomo-mod/component/keepalive"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/adapter/inbound"
+	"github.com/Ruk1ng001/mihomo-mod/component/keepalive"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 type Listener struct {

@@ -6,12 +6,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/atomic"
-	"github.com/ruk1ng001/mihomo-mod/common/batch"
-	"github.com/ruk1ng001/mihomo-mod/common/singledo"
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/common/atomic"
+	"github.com/Ruk1ng001/mihomo-mod/common/batch"
+	"github.com/Ruk1ng001/mihomo-mod/common/singledo"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 
 	"github.com/dlclark/regexp2"
 )

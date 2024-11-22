@@ -7,12 +7,12 @@ import (
 
 	"github.com/dlclark/regexp2"
 
-	"github.com/ruk1ng001/mihomo-mod/adapter/outbound"
-	"github.com/ruk1ng001/mihomo-mod/adapter/provider"
-	"github.com/ruk1ng001/mihomo-mod/common/structure"
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	types "github.com/ruk1ng001/mihomo-mod/constant/provider"
+	"github.com/Ruk1ng001/mihomo-mod/adapter/outbound"
+	"github.com/Ruk1ng001/mihomo-mod/adapter/provider"
+	"github.com/Ruk1ng001/mihomo-mod/common/structure"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	types "github.com/Ruk1ng001/mihomo-mod/constant/provider"
 )
 
 var (

@@ -3,10 +3,10 @@ package http
 import (
 	"net"
 
-	"github.com/ruk1ng001/mihomo-mod/adapter/inbound"
-	"github.com/ruk1ng001/mihomo-mod/component/auth"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	authStore "github.com/ruk1ng001/mihomo-mod/listener/auth"
+	"github.com/Ruk1ng001/mihomo-mod/adapter/inbound"
+	"github.com/Ruk1ng001/mihomo-mod/component/auth"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	authStore "github.com/Ruk1ng001/mihomo-mod/listener/auth"
 )
 
 type Listener struct {

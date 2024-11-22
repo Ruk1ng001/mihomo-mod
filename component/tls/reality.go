@@ -19,8 +19,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/log"
-	"github.com/ruk1ng001/mihomo-mod/ntp"
+	"github.com/Ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/ntp"
 
 	"github.com/metacubex/randv2"
 	utls "github.com/metacubex/utls"

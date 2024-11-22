@@ -4,7 +4,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/atomic"
+	"github.com/Ruk1ng001/mihomo-mod/common/atomic"
 
 	"github.com/puzpuzpuz/xsync/v3"
 	"github.com/shirou/gopsutil/v3/process"

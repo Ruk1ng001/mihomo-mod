@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/pool"
-	"github.com/ruk1ng001/mihomo-mod/component/resource"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	P "github.com/ruk1ng001/mihomo-mod/constant/provider"
+	"github.com/Ruk1ng001/mihomo-mod/common/pool"
+	"github.com/Ruk1ng001/mihomo-mod/component/resource"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	P "github.com/Ruk1ng001/mihomo-mod/constant/provider"
 
 	"gopkg.in/yaml.v3"
 )

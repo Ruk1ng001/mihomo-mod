@@ -4,10 +4,10 @@ import (
 	"context"
 	"errors"
 
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	"github.com/ruk1ng001/mihomo-mod/component/loopback"
-	"github.com/ruk1ng001/mihomo-mod/component/resolver"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/Ruk1ng001/mihomo-mod/component/loopback"
+	"github.com/Ruk1ng001/mihomo-mod/component/resolver"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 type Direct struct {

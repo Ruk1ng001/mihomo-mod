@@ -1,9 +1,9 @@
 package inbound
 
 import (
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/listener/http"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/listener/http"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 type HTTPOption struct {

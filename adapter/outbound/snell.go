@@ -6,12 +6,12 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/ruk1ng001/mihomo-mod/common/structure"
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	obfs "github.com/ruk1ng001/mihomo-mod/transport/simple-obfs"
-	"github.com/ruk1ng001/mihomo-mod/transport/snell"
+	"github.com/Ruk1ng001/mihomo-mod/common/structure"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/Ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	obfs "github.com/Ruk1ng001/mihomo-mod/transport/simple-obfs"
+	"github.com/Ruk1ng001/mihomo-mod/transport/snell"
 )
 
 type Snell struct {

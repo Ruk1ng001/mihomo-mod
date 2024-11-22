@@ -11,8 +11,8 @@ import (
 	"io"
 	"net"
 
-	"github.com/ruk1ng001/mihomo-mod/common/pool"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/common/pool"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 const (

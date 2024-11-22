@@ -4,7 +4,7 @@ import (
 	"net"
 	"net/http"
 
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 // NewHTTPS receive CONNECT request and return ConnContext

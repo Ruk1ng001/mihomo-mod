@@ -6,11 +6,11 @@ import (
 	"net/netip"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/lru"
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/constant/sniffer"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/common/lru"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/constant/sniffer"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 var (

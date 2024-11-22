@@ -4,10 +4,10 @@ import (
 	"errors"
 	"strings"
 
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	LC "github.com/ruk1ng001/mihomo-mod/listener/config"
-	"github.com/ruk1ng001/mihomo-mod/listener/sing_tun"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	LC "github.com/Ruk1ng001/mihomo-mod/listener/config"
+	"github.com/Ruk1ng001/mihomo-mod/listener/sing_tun"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 type TunOption struct {

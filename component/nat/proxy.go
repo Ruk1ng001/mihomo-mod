@@ -3,8 +3,8 @@ package nat
 import (
 	"net"
 
-	"github.com/ruk1ng001/mihomo-mod/common/atomic"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/common/atomic"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 type writeBackProxy struct {

@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ruk1ng001/mihomo-mod/common/nnip"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
+	"github.com/Ruk1ng001/mihomo-mod/common/nnip"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/transport/socks5"
 )
 
 func parseSocksAddr(target socks5.Addr) *C.Metadata {

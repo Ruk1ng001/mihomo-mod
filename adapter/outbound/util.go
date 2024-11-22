@@ -11,9 +11,9 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/ruk1ng001/mihomo-mod/component/resolver"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
+	"github.com/Ruk1ng001/mihomo-mod/component/resolver"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/transport/socks5"
 )
 
 var (

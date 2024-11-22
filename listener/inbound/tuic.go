@@ -1,10 +1,10 @@
 package inbound
 
 import (
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	LC "github.com/ruk1ng001/mihomo-mod/listener/config"
-	"github.com/ruk1ng001/mihomo-mod/listener/tuic"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	LC "github.com/Ruk1ng001/mihomo-mod/listener/config"
+	"github.com/Ruk1ng001/mihomo-mod/listener/tuic"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 type TuicOption struct {

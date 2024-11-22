@@ -8,8 +8,8 @@ import (
 	"runtime"
 	"syscall"
 
-	"github.com/ruk1ng001/mihomo-mod/hub/executor"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/hub/executor"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/render"

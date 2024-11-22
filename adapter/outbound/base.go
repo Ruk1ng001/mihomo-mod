@@ -7,10 +7,10 @@ import (
 	"strings"
 	"syscall"
 
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 type Base struct {

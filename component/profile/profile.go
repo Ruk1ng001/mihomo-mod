@@ -1,7 +1,7 @@
 package profile
 
 import (
-	"github.com/ruk1ng001/mihomo-mod/common/atomic"
+	"github.com/Ruk1ng001/mihomo-mod/common/atomic"
 )
 
 // StoreSelected is a global switch for storing selected proxy to cache

@@ -1,10 +1,10 @@
 package common
 
 import (
-	"github.com/ruk1ng001/mihomo-mod/component/geodata"
-	"github.com/ruk1ng001/mihomo-mod/component/mmdb"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/component/geodata"
+	"github.com/Ruk1ng001/mihomo-mod/component/mmdb"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 type ASN struct {

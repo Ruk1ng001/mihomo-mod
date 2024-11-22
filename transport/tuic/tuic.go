@@ -1,10 +1,10 @@
 package tuic
 
 import (
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/transport/tuic/common"
-	v4 "github.com/ruk1ng001/mihomo-mod/transport/tuic/v4"
-	v5 "github.com/ruk1ng001/mihomo-mod/transport/tuic/v5"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/transport/tuic/common"
+	v4 "github.com/Ruk1ng001/mihomo-mod/transport/tuic/v4"
+	v5 "github.com/Ruk1ng001/mihomo-mod/transport/tuic/v5"
 )
 
 type ClientOptionV4 = v4.ClientOption

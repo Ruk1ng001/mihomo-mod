@@ -14,7 +14,7 @@ import (
 	"strings"
 	"sync"
 
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 var trustCerts []*x509.Certificate

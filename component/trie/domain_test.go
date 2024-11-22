@@ -4,7 +4,7 @@ import (
 	"net/netip"
 	"testing"
 
-	"github.com/ruk1ng001/mihomo-mod/component/trie"
+	"github.com/Ruk1ng001/mihomo-mod/component/trie"
 	"github.com/stretchr/testify/assert"
 )
 

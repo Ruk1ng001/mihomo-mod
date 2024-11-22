@@ -17,10 +17,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/atomic"
-	"github.com/ruk1ng001/mihomo-mod/common/buf"
-	"github.com/ruk1ng001/mihomo-mod/common/pool"
-	tlsC "github.com/ruk1ng001/mihomo-mod/component/tls"
+	"github.com/Ruk1ng001/mihomo-mod/common/atomic"
+	"github.com/Ruk1ng001/mihomo-mod/common/buf"
+	"github.com/Ruk1ng001/mihomo-mod/common/pool"
+	tlsC "github.com/Ruk1ng001/mihomo-mod/component/tls"
 
 	"golang.org/x/net/http2"
 )

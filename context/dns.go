@@ -2,7 +2,7 @@ package context
 
 import (
 	"context"
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
 
 	"github.com/gofrs/uuid/v5"
 	"github.com/miekg/dns"

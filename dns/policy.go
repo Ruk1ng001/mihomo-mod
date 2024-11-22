@@ -1,8 +1,8 @@
 package dns
 
 import (
-	"github.com/ruk1ng001/mihomo-mod/component/trie"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/component/trie"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 type dnsPolicy interface {

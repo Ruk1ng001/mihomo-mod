@@ -5,7 +5,7 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/common/buf"
+	"github.com/Ruk1ng001/mihomo-mod/common/buf"
 )
 
 type refConn struct {

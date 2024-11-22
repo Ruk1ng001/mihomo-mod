@@ -14,12 +14,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/adapter/inbound"
-	CN "github.com/ruk1ng001/mihomo-mod/common/net"
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/log"
-	"github.com/ruk1ng001/mihomo-mod/tunnel/statistic"
+	"github.com/Ruk1ng001/mihomo-mod/adapter/inbound"
+	CN "github.com/Ruk1ng001/mihomo-mod/common/net"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/tunnel/statistic"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"

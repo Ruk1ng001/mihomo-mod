@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ruk1ng001/mihomo-mod/common/utils"
-	"github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/common/utils"
+	"github.com/Ruk1ng001/mihomo-mod/constant"
 )
 
 // Vehicle Type

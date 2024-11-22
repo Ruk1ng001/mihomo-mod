@@ -5,19 +5,19 @@ import (
 	"crypto/tls"
 	"errors"
 	"fmt"
-	"github.com/ruk1ng001/mihomo-mod/transport/vless"
+	"github.com/Ruk1ng001/mihomo-mod/transport/vless"
 	"net"
 	"net/http"
 	"strconv"
 
-	"github.com/ruk1ng001/mihomo-mod/component/ca"
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
-	tlsC "github.com/ruk1ng001/mihomo-mod/component/tls"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/transport/gun"
-	"github.com/ruk1ng001/mihomo-mod/transport/shadowsocks/core"
-	"github.com/ruk1ng001/mihomo-mod/transport/trojan"
+	"github.com/Ruk1ng001/mihomo-mod/component/ca"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/Ruk1ng001/mihomo-mod/component/proxydialer"
+	tlsC "github.com/Ruk1ng001/mihomo-mod/component/tls"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/transport/gun"
+	"github.com/Ruk1ng001/mihomo-mod/transport/shadowsocks/core"
+	"github.com/Ruk1ng001/mihomo-mod/transport/trojan"
 )
 
 type Trojan struct {

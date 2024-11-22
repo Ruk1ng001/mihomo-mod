@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"net"
 
-	"github.com/ruk1ng001/mihomo-mod/common/pool"
+	"github.com/Ruk1ng001/mihomo-mod/common/pool"
 )
 
 type Conn struct {

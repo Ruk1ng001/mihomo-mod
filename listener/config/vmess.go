@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/ruk1ng001/mihomo-mod/listener/sing"
+	"github.com/Ruk1ng001/mihomo-mod/listener/sing"
 
 	"encoding/json"
 )

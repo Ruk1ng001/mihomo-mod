@@ -4,8 +4,8 @@ import (
 	"net"
 	"sync"
 
-	"github.com/ruk1ng001/mihomo-mod/common/buf"
-	"github.com/ruk1ng001/mihomo-mod/common/once"
+	"github.com/Ruk1ng001/mihomo-mod/common/buf"
+	"github.com/Ruk1ng001/mihomo-mod/common/once"
 )
 
 type earlyConn struct {

@@ -11,10 +11,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/obfs"
-	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/pmtud_fix"
-	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/transport"
-	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/utils"
+	"github.com/Ruk1ng001/mihomo-mod/transport/hysteria/obfs"
+	"github.com/Ruk1ng001/mihomo-mod/transport/hysteria/pmtud_fix"
+	"github.com/Ruk1ng001/mihomo-mod/transport/hysteria/transport"
+	"github.com/Ruk1ng001/mihomo-mod/transport/hysteria/utils"
 
 	"github.com/lunixbochs/struc"
 	"github.com/metacubex/quic-go"

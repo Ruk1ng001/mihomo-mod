@@ -5,10 +5,10 @@ import (
 	"encoding/json"
 	"errors"
 
-	"github.com/ruk1ng001/mihomo-mod/adapter/outbound"
-	"github.com/ruk1ng001/mihomo-mod/component/dialer"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/constant/provider"
+	"github.com/Ruk1ng001/mihomo-mod/adapter/outbound"
+	"github.com/Ruk1ng001/mihomo-mod/component/dialer"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/constant/provider"
 )
 
 type Selector struct {

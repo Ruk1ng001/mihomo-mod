@@ -5,7 +5,7 @@ import (
 	"net"
 	"sync"
 
-	"github.com/ruk1ng001/mihomo-mod/component/keepalive"
+	"github.com/Ruk1ng001/mihomo-mod/component/keepalive"
 
 	"github.com/metacubex/tfo-go"
 )

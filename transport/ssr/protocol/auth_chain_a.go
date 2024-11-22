@@ -12,11 +12,11 @@ import (
 	"strconv"
 	"strings"
 
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
-	"github.com/ruk1ng001/mihomo-mod/common/pool"
-	"github.com/ruk1ng001/mihomo-mod/log"
-	"github.com/ruk1ng001/mihomo-mod/transport/shadowsocks/core"
-	"github.com/ruk1ng001/mihomo-mod/transport/ssr/tools"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
+	"github.com/Ruk1ng001/mihomo-mod/common/pool"
+	"github.com/Ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/transport/shadowsocks/core"
+	"github.com/Ruk1ng001/mihomo-mod/transport/ssr/tools"
 )
 
 func init() {
@@ -108,7 +108,7 @@ func (a *authChainA) Decode(dst, src *bytes.Buffer) error {
 		dataLength := int(binary.LittleEndian.Uint16(src.Bytes()[:2]) ^ binary.LittleEndian.Uint16(a.lastServerHash[14:16]))
 		randDataLength := a.randDataLength(dataLength, a.lastServerHash, &a.randomServer)
 		length := dataLength + randDataLength
-		// Temporary workaround for https://github.com/ruk1ng001/mihomo-mod/issues/1352
+		// Temporary workaround for https://github.com/Ruk1ng001/mihomo-mod/issues/1352
 		if dataLength < 0 || randDataLength < 0 || length < 0 {
 			return errors.New("ssr crashing blocked")
 		}
@@ -135,7 +135,7 @@ func (a *authChainA) Decode(dst, src *bytes.Buffer) error {
 		if dataLength > 0 && randDataLength > 0 {
 			pos += getRandStartPos(randDataLength, &a.randomServer)
 		}
-		// Temporary workaround for https://github.com/ruk1ng001/mihomo-mod/issues/1352
+		// Temporary workaround for https://github.com/Ruk1ng001/mihomo-mod/issues/1352
 		if pos < 0 || pos+dataLength < 0 || dataLength < 0 {
 			return errors.New("ssr crashing blocked")
 		}

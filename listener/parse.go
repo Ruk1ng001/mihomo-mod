@@ -3,9 +3,9 @@ package listener
 import (
 	"fmt"
 
-	"github.com/ruk1ng001/mihomo-mod/common/structure"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	IN "github.com/ruk1ng001/mihomo-mod/listener/inbound"
+	"github.com/Ruk1ng001/mihomo-mod/common/structure"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	IN "github.com/Ruk1ng001/mihomo-mod/listener/inbound"
 )
 
 func ParseListener(mapping map[string]any) (C.InboundListener, error) {

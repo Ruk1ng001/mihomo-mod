@@ -1,10 +1,10 @@
 package hub
 
 import (
-	"github.com/ruk1ng001/mihomo-mod/config"
-	"github.com/ruk1ng001/mihomo-mod/hub/executor"
-	"github.com/ruk1ng001/mihomo-mod/hub/route"
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/config"
+	"github.com/Ruk1ng001/mihomo-mod/hub/executor"
+	"github.com/Ruk1ng001/mihomo-mod/hub/route"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 )
 
 type Option func(*config.Config)

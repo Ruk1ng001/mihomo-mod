@@ -12,12 +12,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	atomic2 "github.com/ruk1ng001/mihomo-mod/common/atomic"
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
-	"github.com/ruk1ng001/mihomo-mod/common/pool"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/log"
-	"github.com/ruk1ng001/mihomo-mod/transport/tuic/common"
+	atomic2 "github.com/Ruk1ng001/mihomo-mod/common/atomic"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
+	"github.com/Ruk1ng001/mihomo-mod/common/pool"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/transport/tuic/common"
 
 	"github.com/metacubex/quic-go"
 	"github.com/metacubex/randv2"

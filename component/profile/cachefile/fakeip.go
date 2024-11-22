@@ -3,7 +3,7 @@ package cachefile
 import (
 	"net/netip"
 
-	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/Ruk1ng001/mihomo-mod/log"
 
 	"github.com/metacubex/bbolt"
 )

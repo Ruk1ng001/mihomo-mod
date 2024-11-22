@@ -3,7 +3,7 @@ package constant
 import (
 	"net"
 
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
 
 	"github.com/gofrs/uuid/v5"
 )

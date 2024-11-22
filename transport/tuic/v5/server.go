@@ -7,12 +7,12 @@ import (
 	"net"
 	"sync"
 
-	"github.com/ruk1ng001/mihomo-mod/adapter/inbound"
-	"github.com/ruk1ng001/mihomo-mod/common/atomic"
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
-	"github.com/ruk1ng001/mihomo-mod/transport/tuic/common"
+	"github.com/Ruk1ng001/mihomo-mod/adapter/inbound"
+	"github.com/Ruk1ng001/mihomo-mod/common/atomic"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/transport/socks5"
+	"github.com/Ruk1ng001/mihomo-mod/transport/tuic/common"
 
 	"github.com/gofrs/uuid/v5"
 	"github.com/metacubex/quic-go"

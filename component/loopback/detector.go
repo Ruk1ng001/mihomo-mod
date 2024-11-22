@@ -7,10 +7,10 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/ruk1ng001/mihomo-mod/common/callback"
-	"github.com/ruk1ng001/mihomo-mod/component/iface"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/constant/features"
+	"github.com/Ruk1ng001/mihomo-mod/common/callback"
+	"github.com/Ruk1ng001/mihomo-mod/component/iface"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/constant/features"
 
 	"github.com/puzpuzpuz/xsync/v3"
 )

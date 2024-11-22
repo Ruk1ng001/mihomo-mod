@@ -12,13 +12,13 @@ import (
 	"net/http"
 	"sync"
 
-	N "github.com/ruk1ng001/mihomo-mod/common/net"
-	"github.com/ruk1ng001/mihomo-mod/common/pool"
-	"github.com/ruk1ng001/mihomo-mod/component/ca"
-	tlsC "github.com/ruk1ng001/mihomo-mod/component/tls"
-	C "github.com/ruk1ng001/mihomo-mod/constant"
-	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
-	"github.com/ruk1ng001/mihomo-mod/transport/vmess"
+	N "github.com/Ruk1ng001/mihomo-mod/common/net"
+	"github.com/Ruk1ng001/mihomo-mod/common/pool"
+	"github.com/Ruk1ng001/mihomo-mod/component/ca"
+	tlsC "github.com/Ruk1ng001/mihomo-mod/component/tls"
+	C "github.com/Ruk1ng001/mihomo-mod/constant"
+	"github.com/Ruk1ng001/mihomo-mod/transport/socks5"
+	"github.com/Ruk1ng001/mihomo-mod/transport/vmess"
 )
 
 const (
