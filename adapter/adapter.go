@@ -385,7 +385,6 @@ func (p *Proxy) URLTestDelayAndSpeed(ctx context.Context, url string, expectedSt
 		secondResp, ignoredErr = client.Do(req)
 		if ignoredErr == nil {
 			resp = secondResp
-			_ = resp.Body.Close()
 			start = second
 		} else {
 			if strings.HasPrefix(url, "http://") {
