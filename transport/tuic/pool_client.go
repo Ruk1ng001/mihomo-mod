@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	N "github.com/metacubex/mihomo/common/net"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	"github.com/metacubex/quic-go"
 

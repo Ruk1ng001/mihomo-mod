@@ -12,20 +12,20 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/metacubex/mihomo/common/convert"
-	N "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/common/utils"
-	"github.com/metacubex/mihomo/component/ca"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	"github.com/metacubex/mihomo/component/resolver"
-	tlsC "github.com/metacubex/mihomo/component/tls"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
-	"github.com/metacubex/mihomo/transport/gun"
-	"github.com/metacubex/mihomo/transport/socks5"
-	"github.com/metacubex/mihomo/transport/vless"
-	"github.com/metacubex/mihomo/transport/vmess"
+	"github.com/ruk1ng001/mihomo-mod/common/convert"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	"github.com/ruk1ng001/mihomo-mod/component/resolver"
+	tlsC "github.com/ruk1ng001/mihomo-mod/component/tls"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
+	"github.com/ruk1ng001/mihomo-mod/transport/gun"
+	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
+	"github.com/ruk1ng001/mihomo-mod/transport/vless"
+	"github.com/ruk1ng001/mihomo-mod/transport/vmess"
 
 	vmessSing "github.com/metacubex/sing-vmess"
 	"github.com/metacubex/sing-vmess/packetaddr"
@@ -377,6 +377,11 @@ func (v *Vless) ListenPacketOnStreamConn(ctx context.Context, c net.Conn, metada
 // SupportUOT implements C.ProxyAdapter
 func (v *Vless) SupportUOT() bool {
 	return true
+}
+
+// SupportDialerProxy implements C.ProxyAdapter
+func (v *Vless) SupportDialerProxy() string {
+	return v.option.DialerProxy
 }
 
 func parseVlessAddr(metadata *C.Metadata, xudp bool) *vless.DstAddr {

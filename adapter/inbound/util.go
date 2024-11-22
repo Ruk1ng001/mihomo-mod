@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/metacubex/mihomo/common/nnip"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/transport/socks5"
+	"github.com/ruk1ng001/mihomo-mod/common/nnip"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
 )
 
 func parseSocksAddr(target socks5.Addr) *C.Metadata {
@@ -60,4 +60,20 @@ func parseHTTPAddr(request *http.Request) *C.Metadata {
 	}
 
 	return metadata
+}
+
+func prefixesContains(prefixes []netip.Prefix, addr netip.Addr) bool {
+	if len(prefixes) == 0 {
+		return false
+	}
+	if !addr.IsValid() {
+		return false
+	}
+	addr = addr.Unmap().WithZone("") // netip.Prefix.Contains returns false if ip has an IPv6 zone
+	for _, prefix := range prefixes {
+		if prefix.Contains(addr) {
+			return true
+		}
+	}
+	return false
 }

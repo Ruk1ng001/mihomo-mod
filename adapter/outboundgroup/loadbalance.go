@@ -9,14 +9,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/metacubex/mihomo/adapter/outbound"
-	"github.com/metacubex/mihomo/common/callback"
-	"github.com/metacubex/mihomo/common/lru"
-	N "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/common/utils"
-	"github.com/metacubex/mihomo/component/dialer"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/constant/provider"
+	"github.com/ruk1ng001/mihomo-mod/adapter/outbound"
+	"github.com/ruk1ng001/mihomo-mod/common/callback"
+	"github.com/ruk1ng001/mihomo-mod/common/lru"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/constant/provider"
 
 	"golang.org/x/net/publicsuffix"
 )

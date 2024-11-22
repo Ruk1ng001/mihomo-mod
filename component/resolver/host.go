@@ -8,10 +8,10 @@ import (
 	"strings"
 	_ "unsafe"
 
-	"github.com/metacubex/mihomo/common/utils"
-	"github.com/metacubex/mihomo/component/resolver/hosts"
-	"github.com/metacubex/mihomo/component/trie"
 	"github.com/metacubex/randv2"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/component/resolver/hosts"
+	"github.com/ruk1ng001/mihomo-mod/component/trie"
 )
 
 var (

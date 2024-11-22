@@ -12,10 +12,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/metacubex/mihomo/component/ca"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
 	"github.com/metacubex/quic-go"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	D "github.com/miekg/dns"
 )

@@ -3,15 +3,15 @@ package mixed
 import (
 	"net"
 
-	"github.com/metacubex/mihomo/adapter/inbound"
-	N "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/component/auth"
-	C "github.com/metacubex/mihomo/constant"
-	authStore "github.com/metacubex/mihomo/listener/auth"
-	"github.com/metacubex/mihomo/listener/http"
-	"github.com/metacubex/mihomo/listener/socks"
-	"github.com/metacubex/mihomo/transport/socks4"
-	"github.com/metacubex/mihomo/transport/socks5"
+	"github.com/ruk1ng001/mihomo-mod/adapter/inbound"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/component/auth"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	authStore "github.com/ruk1ng001/mihomo-mod/listener/auth"
+	"github.com/ruk1ng001/mihomo-mod/listener/http"
+	"github.com/ruk1ng001/mihomo-mod/listener/socks"
+	"github.com/ruk1ng001/mihomo-mod/transport/socks4"
+	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
 )
 
 type Listener struct {

@@ -9,11 +9,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/metacubex/mihomo/adapter/inbound"
-	N "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/component/auth"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/adapter/inbound"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/component/auth"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
 )
 
 type bodyWrapper struct {

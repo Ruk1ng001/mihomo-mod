@@ -11,17 +11,17 @@ import (
 	"strings"
 	"sync"
 
-	N "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/common/utils"
-	"github.com/metacubex/mihomo/component/ca"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	"github.com/metacubex/mihomo/component/resolver"
-	tlsC "github.com/metacubex/mihomo/component/tls"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/ntp"
-	"github.com/metacubex/mihomo/transport/gun"
-	mihomoVMess "github.com/metacubex/mihomo/transport/vmess"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	"github.com/ruk1ng001/mihomo-mod/component/resolver"
+	tlsC "github.com/ruk1ng001/mihomo-mod/component/tls"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/ntp"
+	"github.com/ruk1ng001/mihomo-mod/transport/gun"
+	mihomoVMess "github.com/ruk1ng001/mihomo-mod/transport/vmess"
 
 	vmess "github.com/metacubex/sing-vmess"
 	"github.com/metacubex/sing-vmess/packetaddr"
@@ -386,6 +386,10 @@ func (v *Vmess) ListenPacketWithDialer(ctx context.Context, dialer C.Dialer, met
 // SupportWithDialer implements C.ProxyAdapter
 func (v *Vmess) SupportWithDialer() C.NetWork {
 	return C.ALLNet
+}
+
+func (v *Vmess) SupportDialerProxy() string {
+	return v.option.DialerProxy
 }
 
 // ListenPacketOnStreamConn implements C.ProxyAdapter

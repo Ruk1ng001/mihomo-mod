@@ -10,8 +10,8 @@ import (
 	"strings"
 	"sync"
 
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
 )
 
 type UIUpdater struct {

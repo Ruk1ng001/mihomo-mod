@@ -12,13 +12,13 @@ import (
 	"net/http"
 	"sync"
 
-	N "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/common/pool"
-	"github.com/metacubex/mihomo/component/ca"
-	tlsC "github.com/metacubex/mihomo/component/tls"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/transport/socks5"
-	"github.com/metacubex/mihomo/transport/vmess"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/common/pool"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	tlsC "github.com/ruk1ng001/mihomo-mod/component/tls"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
+	"github.com/ruk1ng001/mihomo-mod/transport/vmess"
 )
 
 const (
@@ -50,6 +50,8 @@ type Option struct {
 	ServerName        string
 	SkipCertVerify    bool
 	Fingerprint       string
+	Flow              string
+	FlowShow          bool
 	ClientFingerprint string
 	Reality           *tlsC.RealityConfig
 }

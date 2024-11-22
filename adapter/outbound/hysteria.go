@@ -15,18 +15,18 @@ import (
 	"github.com/metacubex/quic-go/congestion"
 	M "github.com/sagernet/sing/common/metadata"
 
-	CN "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/component/ca"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
-	hyCongestion "github.com/metacubex/mihomo/transport/hysteria/congestion"
-	"github.com/metacubex/mihomo/transport/hysteria/core"
-	"github.com/metacubex/mihomo/transport/hysteria/obfs"
-	"github.com/metacubex/mihomo/transport/hysteria/pmtud_fix"
-	"github.com/metacubex/mihomo/transport/hysteria/transport"
-	"github.com/metacubex/mihomo/transport/hysteria/utils"
+	CN "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
+	hyCongestion "github.com/ruk1ng001/mihomo-mod/transport/hysteria/congestion"
+	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/core"
+	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/obfs"
+	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/pmtud_fix"
+	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/transport"
+	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/utils"
 )
 
 const (
@@ -85,6 +85,11 @@ func (h *Hysteria) genHdc(ctx context.Context, opts ...dialer.Option) utils.Pack
 			return resolveUDPAddrWithPrefer(ctx, "udp", addr, h.prefer)
 		},
 	}
+}
+
+// SupportDialerProxy implements C.ProxyAdapter
+func (h *Hysteria) SupportDialerProxy() string {
+	return h.option.DialerProxy
 }
 
 type HysteriaOption struct {

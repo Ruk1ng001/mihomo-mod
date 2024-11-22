@@ -8,9 +8,9 @@ import (
 	"net"
 	"sync"
 
-	"github.com/metacubex/mihomo/common/pool"
-	"github.com/metacubex/mihomo/transport/shadowsocks/shadowaead"
-	"github.com/metacubex/mihomo/transport/socks5"
+	"github.com/ruk1ng001/mihomo-mod/common/pool"
+	"github.com/ruk1ng001/mihomo-mod/transport/shadowsocks/shadowaead"
+	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
 )
 
 const (

@@ -10,7 +10,7 @@ linters-settings:
   gci:
     sections:
       - standard
-      - prefix(github.com/metacubex/mihomo)
+      - prefix(github.com/Ruk1ng001/mihomo-mod)
       - default
   staticcheck:
     go: '1.19'

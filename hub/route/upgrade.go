@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/metacubex/mihomo/component/updater"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/component/updater"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/render"

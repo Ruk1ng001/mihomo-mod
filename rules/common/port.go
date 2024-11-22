@@ -3,8 +3,8 @@ package common
 import (
 	"fmt"
 
-	"github.com/metacubex/mihomo/common/utils"
-	C "github.com/metacubex/mihomo/constant"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 )
 
 type Port struct {

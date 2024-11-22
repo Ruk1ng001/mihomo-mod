@@ -5,8 +5,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/metacubex/mihomo/common/atomic"
-	"github.com/metacubex/mihomo/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/common/atomic"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
 )
 
 var (

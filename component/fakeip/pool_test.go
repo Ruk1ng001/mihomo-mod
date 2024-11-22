@@ -7,9 +7,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/metacubex/mihomo/component/profile/cachefile"
-	"github.com/metacubex/mihomo/component/trie"
-	C "github.com/metacubex/mihomo/constant"
+	"github.com/ruk1ng001/mihomo-mod/component/profile/cachefile"
+	"github.com/ruk1ng001/mihomo-mod/component/trie"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 
 	"github.com/metacubex/bbolt"
 	"github.com/stretchr/testify/assert"

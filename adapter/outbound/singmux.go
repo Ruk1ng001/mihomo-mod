@@ -5,12 +5,12 @@ import (
 	"errors"
 	"runtime"
 
-	CN "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	"github.com/metacubex/mihomo/component/resolver"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
+	CN "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	"github.com/ruk1ng001/mihomo-mod/component/resolver"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	mux "github.com/sagernet/sing-mux"
 	E "github.com/sagernet/sing/common/exceptions"
@@ -94,6 +94,10 @@ func (s *SingMux) SupportUOT() bool {
 	if s.onlyTcp {
 		return s.ProxyAdapter.SupportUOT()
 	}
+	return true
+}
+
+func (s *SingMux) SupportSMUX() bool {
 	return true
 }
 

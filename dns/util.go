@@ -10,11 +10,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/metacubex/mihomo/common/nnip"
-	"github.com/metacubex/mihomo/common/picker"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/resolver"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/common/nnip"
+	"github.com/ruk1ng001/mihomo-mod/common/picker"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/resolver"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	D "github.com/miekg/dns"
 	"github.com/samber/lo"

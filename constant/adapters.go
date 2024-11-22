@@ -9,9 +9,9 @@ import (
 	"sync"
 	"time"
 
-	N "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/common/utils"
-	"github.com/metacubex/mihomo/component/dialer"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
 )
 
 // Adapter Type
@@ -27,6 +27,7 @@ const (
 	Selector
 	Fallback
 	URLTest
+	URLTestDelayAndSpeed
 	LoadBalance
 
 	Shadowsocks
@@ -106,6 +107,11 @@ type ProxyAdapter interface {
 	SupportUDP() bool
 	SupportXUDP() bool
 	SupportTFO() bool
+	SupportMPTCP() bool
+	SupportSMUX() bool
+	SupportInterface() string
+	SupportRoutingMark() int
+	SupportDialerProxy() string
 	MarshalJSON() ([]byte, error)
 
 	// Deprecated: use DialContextWithDialer and ListenPacketWithDialer instead.
@@ -164,6 +170,7 @@ type Proxy interface {
 	ExtraDelayHistories() map[string]ProxyState
 	LastDelayForTestUrl(url string) uint16
 	URLTest(ctx context.Context, url string, expectedStatus utils.IntRanges[uint16]) (uint16, error)
+	URLTestDelayAndSpeed(ctx context.Context, url string, expectedStatus utils.IntRanges[uint16]) (uint16, float64, error)
 
 	// Deprecated: use DialContext instead.
 	Dial(metadata *Metadata) (Conn, error)
@@ -224,6 +231,8 @@ func (at AdapterType) String() string {
 		return "Fallback"
 	case URLTest:
 		return "URLTest"
+	case URLTestDelayAndSpeed:
+		return "URLTestDelayAndSpeed"
 	case LoadBalance:
 		return "LoadBalance"
 	default:

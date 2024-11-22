@@ -3,8 +3,8 @@ package cachefile
 import (
 	"time"
 
-	"github.com/metacubex/mihomo/common/utils"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	"github.com/metacubex/bbolt"
 	"github.com/vmihailenco/msgpack/v5"

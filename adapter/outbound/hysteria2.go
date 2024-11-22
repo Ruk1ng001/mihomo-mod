@@ -10,14 +10,14 @@ import (
 	"strconv"
 	"time"
 
-	CN "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/common/utils"
-	"github.com/metacubex/mihomo/component/ca"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
-	tuicCommon "github.com/metacubex/mihomo/transport/tuic/common"
+	CN "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
+	tuicCommon "github.com/ruk1ng001/mihomo-mod/transport/tuic/common"
 
 	"github.com/metacubex/sing-quic/hysteria2"
 
@@ -94,6 +94,11 @@ func closeHysteria2(h *Hysteria2) {
 	if h.closeCh != nil {
 		close(h.closeCh)
 	}
+}
+
+// SupportDialerProxy implements C.ProxyAdapter
+func (h *Hysteria2) SupportDialerProxy() string {
+	return h.option.DialerProxy
 }
 
 func NewHysteria2(option Hysteria2Option) (*Hysteria2, error) {

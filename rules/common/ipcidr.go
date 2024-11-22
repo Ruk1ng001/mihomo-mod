@@ -3,7 +3,7 @@ package common
 import (
 	"net/netip"
 
-	C "github.com/metacubex/mihomo/constant"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 )
 
 type IPCIDROption func(*IPCIDR)
@@ -40,7 +40,7 @@ func (i *IPCIDR) Match(metadata *C.Metadata) (bool, string) {
 	if i.isSourceIP {
 		ip = metadata.SrcIP
 	}
-	return ip.IsValid() && i.ipnet.Contains(ip), i.adapter
+	return ip.IsValid() && i.ipnet.Contains(ip.WithZone("")), i.adapter
 }
 
 func (i *IPCIDR) Adapter() string {

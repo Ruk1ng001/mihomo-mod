@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"net"
 
-	"github.com/metacubex/mihomo/common/buf"
+	"github.com/ruk1ng001/mihomo-mod/common/buf"
 )
 
 var _ ExtendedConn = (*BufferedConn)(nil)

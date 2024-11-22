@@ -1,12 +1,10 @@
 package common
 
 import (
-	"strconv"
-
-	"github.com/metacubex/mihomo/component/geodata"
-	"github.com/metacubex/mihomo/component/mmdb"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/component/geodata"
+	"github.com/ruk1ng001/mihomo-mod/component/mmdb"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
 )
 
 type ASN struct {
@@ -26,17 +24,14 @@ func (a *ASN) Match(metadata *C.Metadata) (bool, string) {
 		return false, ""
 	}
 
-	result := mmdb.ASNInstance().LookupASN(ip.AsSlice())
-	asnNumber := strconv.FormatUint(uint64(result.AutonomousSystemNumber), 10)
-	ipASN := asnNumber + " " + result.AutonomousSystemOrganization
+	asn, aso := mmdb.ASNInstance().LookupASN(ip.AsSlice())
 	if a.isSourceIP {
-		metadata.SrcIPASN = ipASN
+		metadata.SrcIPASN = asn + " " + aso
 	} else {
-		metadata.DstIPASN = ipASN
+		metadata.DstIPASN = asn + " " + aso
 	}
 
-	match := a.asn == asnNumber
-	return match, a.adapter
+	return a.asn == asn, a.adapter
 }
 
 func (a *ASN) RuleType() C.RuleType {

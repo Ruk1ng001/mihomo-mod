@@ -1,9 +1,9 @@
 package callback
 
 import (
-	"github.com/metacubex/mihomo/common/buf"
-	N "github.com/metacubex/mihomo/common/net"
-	C "github.com/metacubex/mihomo/constant"
+	"github.com/ruk1ng001/mihomo-mod/common/buf"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 )
 
 type firstWriteCallBackConn struct {

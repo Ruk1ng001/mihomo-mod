@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/metacubex/mihomo/adapter/inbound"
-	"github.com/metacubex/mihomo/adapter/outbound"
-	N "github.com/metacubex/mihomo/common/net"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/adapter/inbound"
+	"github.com/ruk1ng001/mihomo-mod/adapter/outbound"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	vmess "github.com/metacubex/sing-vmess"
 	mux "github.com/sagernet/sing-mux"

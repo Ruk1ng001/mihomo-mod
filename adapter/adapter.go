@@ -5,6 +5,7 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"fmt"
+	"io"
 	"net"
 	"net/http"
 	"net/netip"
@@ -13,14 +14,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/metacubex/mihomo/common/atomic"
-	"github.com/metacubex/mihomo/common/queue"
-	"github.com/metacubex/mihomo/common/utils"
-	"github.com/metacubex/mihomo/component/ca"
-	"github.com/metacubex/mihomo/component/dialer"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
 	"github.com/puzpuzpuz/xsync/v3"
+	"github.com/ruk1ng001/mihomo-mod/common/atomic"
+	"github.com/ruk1ng001/mihomo-mod/common/queue"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
 )
 
 var UnifiedDelay = atomic.NewBool(false)
@@ -163,8 +164,14 @@ func (p *Proxy) MarshalJSON() ([]byte, error) {
 	mapping["alive"] = p.alive.Load()
 	mapping["name"] = p.Name()
 	mapping["udp"] = p.SupportUDP()
+	mapping["uot"] = p.SupportUOT()
 	mapping["xudp"] = p.SupportXUDP()
 	mapping["tfo"] = p.SupportTFO()
+	mapping["mptcp"] = p.SupportMPTCP()
+	mapping["smux"] = p.SupportSMUX()
+	mapping["interface"] = p.SupportInterface()
+	mapping["dialer-proxy"] = p.SupportDialerProxy()
+	mapping["routing-mark"] = p.SupportRoutingMark()
 	return json.Marshal(mapping)
 }
 
@@ -279,6 +286,122 @@ func (p *Proxy) URLTest(ctx context.Context, url string, expectedStatus utils.In
 
 	satisfied = resp != nil && (expectedStatus == nil || expectedStatus.Check(uint16(resp.StatusCode)))
 	t = uint16(time.Since(start) / time.Millisecond)
+	return
+}
+func (p *Proxy) URLTestDelayAndSpeed(ctx context.Context, url string, expectedStatus utils.IntRanges[uint16]) (t uint16, s float64, err error) {
+	var satisfied bool
+
+	defer func() {
+		alive := err == nil
+		record := C.DelayHistory{Time: time.Now()}
+		if alive {
+			record.Delay = t
+		}
+
+		p.alive.Store(alive)
+		p.history.Put(record)
+		if p.history.Len() > defaultHistoriesNum {
+			p.history.Pop()
+		}
+
+		state, ok := p.extra.Load(url)
+		if !ok {
+			state = &internalProxyState{
+				history: queue.New[C.DelayHistory](defaultHistoriesNum),
+				alive:   atomic.NewBool(true),
+			}
+			p.extra.Store(url, state)
+		}
+
+		if !satisfied {
+			record.Delay = 0
+			alive = false
+		}
+
+		state.alive.Store(alive)
+		state.history.Put(record)
+		if state.history.Len() > defaultHistoriesNum {
+			state.history.Pop()
+		}
+
+	}()
+
+	unifiedDelay := UnifiedDelay.Load()
+
+	addr, err := urlToMetadata(url)
+	if err != nil {
+		return
+	}
+
+	start := time.Now()
+	instance, err := p.DialContext(ctx, &addr)
+	if err != nil {
+		return
+	}
+	defer func() {
+		_ = instance.Close()
+	}()
+
+	req, err := http.NewRequest(http.MethodGet, url, nil)
+	if err != nil {
+		return
+	}
+	req = req.WithContext(ctx)
+
+	transport := &http.Transport{
+		DialContext: func(context.Context, string, string) (net.Conn, error) {
+			return instance, nil
+		},
+		// from http.DefaultTransport
+		MaxIdleConns:          100,
+		IdleConnTimeout:       90 * time.Second,
+		TLSHandshakeTimeout:   10 * time.Second,
+		ExpectContinueTimeout: 10 * time.Second,
+		TLSClientConfig:       ca.GetGlobalTLSConfig(&tls.Config{}),
+	}
+
+	client := http.Client{
+		Timeout:   30 * time.Second,
+		Transport: transport,
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			return http.ErrUseLastResponse
+		},
+	}
+
+	defer client.CloseIdleConnections()
+
+	resp, err := client.Do(req)
+
+	if err != nil {
+		return
+	}
+
+	defer resp.Body.Close()
+
+	if unifiedDelay {
+		second := time.Now()
+		var ignoredErr error
+		var secondResp *http.Response
+		secondResp, ignoredErr = client.Do(req)
+		if ignoredErr == nil {
+			resp = secondResp
+			_ = resp.Body.Close()
+			start = second
+		} else {
+			if strings.HasPrefix(url, "http://") {
+				log.Errorln("%s failed to get the second response from %s: %v", p.Name(), url, ignoredErr)
+				log.Warnln("It is recommended to use HTTPS for provider.health-check.url and group.url to ensure better reliability. Due to some proxy providers hijacking test addresses and not being compatible with repeated HEAD requests, using HTTP may result in failed tests.")
+			}
+		}
+	}
+
+	satisfied = resp != nil && (expectedStatus == nil || expectedStatus.Check(uint16(resp.StatusCode)))
+	t = uint16(time.Since(start) / time.Millisecond)
+
+	defer resp.Body.Close()
+	written, _ := io.Copy(io.Discard, resp.Body)
+	s = float64(written) / float64(time.Since(start).Microseconds())
+
 	return
 }
 func NewProxy(adapter C.ProxyAdapter) *Proxy {

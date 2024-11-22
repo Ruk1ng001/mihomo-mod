@@ -5,9 +5,9 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/metacubex/mihomo/common/utils"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/constant/sniffer"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/constant/sniffer"
 )
 
 var (

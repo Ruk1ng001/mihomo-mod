@@ -6,8 +6,8 @@ import (
 	"net/netip"
 	"strconv"
 
-	N "github.com/metacubex/mihomo/common/net"
-	C "github.com/metacubex/mihomo/constant"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 )
 
 var tunnel C.Tunnel

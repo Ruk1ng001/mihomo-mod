@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/netip"
 
-	C "github.com/metacubex/mihomo/constant"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 )
 
 var (

@@ -6,7 +6,7 @@ import (
 	"net/netip"
 	"time"
 
-	"github.com/metacubex/mihomo/common/singledo"
+	"github.com/ruk1ng001/mihomo-mod/common/singledo"
 )
 
 type Interface struct {
@@ -15,6 +15,7 @@ type Interface struct {
 	Name         string
 	Addresses    []netip.Prefix
 	HardwareAddr net.HardwareAddr
+	Flags        net.Flags
 }
 
 var (
@@ -66,6 +67,7 @@ func Interfaces() (map[string]*Interface, error) {
 				Name:         iface.Name,
 				Addresses:    ipNets,
 				HardwareAddr: iface.HardwareAddr,
+				Flags:        iface.Flags,
 			}
 		}
 

@@ -12,15 +12,15 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/metacubex/mihomo/adapter/inbound"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/iface"
-	"github.com/metacubex/mihomo/component/resolver"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/constant/provider"
-	LC "github.com/metacubex/mihomo/listener/config"
-	"github.com/metacubex/mihomo/listener/sing"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/adapter/inbound"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/iface"
+	"github.com/ruk1ng001/mihomo-mod/component/resolver"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/constant/provider"
+	LC "github.com/ruk1ng001/mihomo-mod/listener/config"
+	"github.com/ruk1ng001/mihomo-mod/listener/sing"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	tun "github.com/metacubex/sing-tun"
 	"github.com/sagernet/sing/common"
@@ -279,7 +279,11 @@ func New(options LC.Tun, tunnel C.Tunnel, additions ...inbound.Addition) (l *Lis
 			return
 		}
 
-		defaultInterfaceMonitor, err = tun.NewDefaultInterfaceMonitor(networkUpdateMonitor, log.SingLogger, tun.DefaultInterfaceMonitorOptions{InterfaceFinder: interfaceFinder, OverrideAndroidVPN: true})
+		overrideAndroidVPN := true
+		if disable, _ := strconv.ParseBool(os.Getenv("DISABLE_OVERRIDE_ANDROID_VPN")); disable {
+			overrideAndroidVPN = false
+		}
+		defaultInterfaceMonitor, err = tun.NewDefaultInterfaceMonitor(networkUpdateMonitor, log.SingLogger, tun.DefaultInterfaceMonitorOptions{InterfaceFinder: interfaceFinder, OverrideAndroidVPN: overrideAndroidVPN})
 		if err != nil {
 			err = E.Cause(err, "create DefaultInterfaceMonitor")
 			return

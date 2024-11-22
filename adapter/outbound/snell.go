@@ -6,12 +6,12 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/metacubex/mihomo/common/structure"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	C "github.com/metacubex/mihomo/constant"
-	obfs "github.com/metacubex/mihomo/transport/simple-obfs"
-	"github.com/metacubex/mihomo/transport/snell"
+	"github.com/ruk1ng001/mihomo-mod/common/structure"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	obfs "github.com/ruk1ng001/mihomo-mod/transport/simple-obfs"
+	"github.com/ruk1ng001/mihomo-mod/transport/snell"
 )
 
 type Snell struct {
@@ -141,6 +141,11 @@ func (s *Snell) SupportUOT() bool {
 	return true
 }
 
+// SupportDialerProxy implements C.ProxyAdapter
+func (s *Snell) SupportDialerProxy() string {
+	return s.option.DialerProxy
+}
+
 func NewSnell(option SnellOption) (*Snell, error) {
 	addr := net.JoinHostPort(option.Server, strconv.Itoa(option.Port))
 	psk := []byte(option.Psk)
@@ -204,7 +209,7 @@ func NewSnell(option SnellOption) (*Snell, error) {
 			if err != nil {
 				return nil, err
 			}
-			
+
 			return streamConn(c, streamOption{psk, option.Version, addr, obfsOption}), nil
 		})
 	}

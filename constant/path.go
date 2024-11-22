@@ -7,8 +7,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/metacubex/mihomo/common/utils"
-	"github.com/metacubex/mihomo/constant/features"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/constant/features"
 )
 
 const Name = "mihomo"

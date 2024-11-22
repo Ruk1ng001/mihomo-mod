@@ -14,15 +14,15 @@ import (
 	"sync"
 	"time"
 
-	"github.com/metacubex/mihomo/common/atomic"
-	CN "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	"github.com/metacubex/mihomo/component/resolver"
-	"github.com/metacubex/mihomo/component/slowdown"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/dns"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/common/atomic"
+	CN "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	"github.com/ruk1ng001/mihomo-mod/component/resolver"
+	"github.com/ruk1ng001/mihomo-mod/component/slowdown"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/dns"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	amnezia "github.com/metacubex/amneziawg-go/device"
 	wireguard "github.com/metacubex/sing-wireguard"
@@ -625,6 +625,20 @@ func (r *refProxyAdapter) SupportTFO() bool {
 	return false
 }
 
+func (r *refProxyAdapter) SupportMPTCP() bool {
+	if r.proxyAdapter != nil {
+		return r.proxyAdapter.SupportMPTCP()
+	}
+	return false
+}
+
+func (r *refProxyAdapter) SupportSMUX() bool {
+	if r.proxyAdapter != nil {
+		return r.proxyAdapter.SupportSMUX()
+	}
+	return false
+}
+
 func (r *refProxyAdapter) MarshalJSON() ([]byte, error) {
 	if r.proxyAdapter != nil {
 		return r.proxyAdapter.MarshalJSON()
@@ -658,6 +672,27 @@ func (r *refProxyAdapter) SupportUOT() bool {
 		return r.proxyAdapter.SupportUOT()
 	}
 	return false
+}
+
+func (r *refProxyAdapter) SupportDialerProxy() string {
+	if r.proxyAdapter != nil {
+		return r.proxyAdapter.SupportDialerProxy()
+	}
+	return ""
+}
+
+func (r *refProxyAdapter) SupportInterface() string {
+	if r.proxyAdapter != nil {
+		return r.proxyAdapter.SupportInterface()
+	}
+	return ""
+}
+
+func (r *refProxyAdapter) SupportRoutingMark() int {
+	if r.proxyAdapter != nil {
+		return r.proxyAdapter.SupportRoutingMark()
+	}
+	return 0
 }
 
 func (r *refProxyAdapter) SupportWithDialer() C.NetWork {

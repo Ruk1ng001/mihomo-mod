@@ -1,7 +1,7 @@
 package geodata
 
 import (
-	"github.com/metacubex/mihomo/component/geodata/router"
+	"github.com/ruk1ng001/mihomo-mod/component/geodata/router"
 )
 
 type LoaderImplementation interface {

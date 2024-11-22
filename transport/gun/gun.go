@@ -17,10 +17,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/metacubex/mihomo/common/atomic"
-	"github.com/metacubex/mihomo/common/buf"
-	"github.com/metacubex/mihomo/common/pool"
-	tlsC "github.com/metacubex/mihomo/component/tls"
+	"github.com/ruk1ng001/mihomo-mod/common/atomic"
+	"github.com/ruk1ng001/mihomo-mod/common/buf"
+	"github.com/ruk1ng001/mihomo-mod/common/pool"
+	tlsC "github.com/ruk1ng001/mihomo-mod/component/tls"
 
 	"golang.org/x/net/http2"
 )
@@ -283,6 +283,44 @@ func StreamGunWithTransport(transport *TransportWrap, cfg *Config) (net.Conn, er
 		ProtoMajor: 2,
 		ProtoMinor: 0,
 		Header:     defaultHeader,
+	}
+	// 使用 http.Client 自动处理重定向
+	client := &http.Client{
+		Timeout:   time.Second * 30,
+		Transport: transport, // 使用自定义 Transport
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			if len(via) >= 10 {
+				return fmt.Errorf("too many redirects")
+			}
+			// 这里可以记录重定向的地址
+			fmt.Println("重定向到:", req.URL)
+			return nil // 继续跟随重定向
+		},
+	}
+
+	resp, err := client.Do(request)
+	if err != nil {
+		return nil, err // 处理请求错误
+	}
+	defer resp.Body.Close()
+
+	// 处理 302 重定向响应
+	if resp.StatusCode == http.StatusFound { // 302
+		redirectURL := resp.Header.Get("Location")
+		fmt.Println("服务器重定向到:", redirectURL)
+
+		// 根据需要，可以创建新的请求并发起到重定向的 URL
+		newRequest, err := http.NewRequest(http.MethodPost, redirectURL, reader)
+		if err != nil {
+			return nil, err
+		}
+		newRequest.Header = request.Header // 保持头部一致
+		newResp, err := client.Do(newRequest)
+		if err != nil {
+			return nil, err
+		}
+		defer newResp.Body.Close()
+		// 继续处理新的响应
 	}
 
 	conn := &Conn{

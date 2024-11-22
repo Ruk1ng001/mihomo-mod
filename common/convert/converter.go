@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/log"
 )
 
 // ConvertsV2Ray convert V2Ray subscribe proxies data to mihomo proxies config
@@ -252,12 +252,13 @@ func ConvertsV2Ray(buf []byte) ([]map[string]any, error) {
 			if jsonDc.Decode(&values) != nil {
 				continue
 			}
+			vmess := make(map[string]any, 20)
+
 			tempName, ok := values["ps"].(string)
 			if !ok {
-				continue
+				tempName = values["id"].(string)
 			}
 			name := uniqueName(names, tempName)
-			vmess := make(map[string]any, 20)
 
 			vmess["name"] = name
 			vmess["type"] = scheme
@@ -292,9 +293,8 @@ func ConvertsV2Ray(buf []byte) ([]map[string]any, error) {
 			}
 			vmess["network"] = network
 
-			tls, ok := values["tls"].(string)
-			if ok {
-				tls = strings.ToLower(tls)
+			if tls, ok := values["tls"]; ok {
+				tls := strings.ToLower(tls.(string))
 				if strings.HasSuffix(tls, "tls") {
 					vmess["tls"] = true
 				}
@@ -385,11 +385,12 @@ func ConvertsV2Ray(buf []byte) ([]map[string]any, error) {
 
 			if port == "" {
 				dcBuf, err := encRaw.DecodeString(urlSS.Host)
-				if err != nil {
+				dcStr := string(dcBuf)
+				if err != nil && len(dcBuf) == 0 && !strings.Contains(dcStr, ":") {
 					continue
 				}
 
-				urlSS, err = url.Parse("ss://" + string(dcBuf))
+				urlSS, err = url.Parse("ss://" + dcStr)
 				if err != nil {
 					continue
 				}
@@ -420,6 +421,9 @@ func ConvertsV2Ray(buf []byte) ([]map[string]any, error) {
 			ss := make(map[string]any, 10)
 
 			ss["name"] = name
+			if name == "" {
+				ss["name"] = urlSS.Hostname() + urlSS.Port()
+			}
 			ss["type"] = scheme
 			ss["server"] = urlSS.Hostname()
 			ss["port"] = urlSS.Port()
@@ -454,7 +458,7 @@ func ConvertsV2Ray(buf []byte) ([]map[string]any, error) {
 			proxies = append(proxies, ss)
 
 		case "ssr":
-			dcBuf, err := encRaw.DecodeString(body)
+			dcBuf, err := tryDecodeBase64([]byte(body))
 			if err != nil {
 				continue
 			}

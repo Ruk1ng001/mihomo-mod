@@ -6,10 +6,10 @@ import (
 	"net"
 	"net/netip"
 
-	"github.com/metacubex/mihomo/adapter/inbound"
-	"github.com/metacubex/mihomo/common/pool"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/adapter/inbound"
+	"github.com/ruk1ng001/mihomo-mod/common/pool"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
 )
 
 type packet struct {

@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"syscall"
 
-	"github.com/metacubex/mihomo/common/pool"
+	"github.com/ruk1ng001/mihomo-mod/common/pool"
 )
 
 type enhanceUDPConn struct {

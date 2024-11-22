@@ -5,8 +5,8 @@ import (
 	"net"
 	"time"
 
-	"github.com/metacubex/mihomo/component/pool"
-	"github.com/metacubex/mihomo/transport/shadowsocks/shadowaead"
+	"github.com/ruk1ng001/mihomo-mod/component/pool"
+	"github.com/ruk1ng001/mihomo-mod/transport/shadowsocks/shadowaead"
 )
 
 type Pool struct {

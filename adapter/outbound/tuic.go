@@ -10,12 +10,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/metacubex/mihomo/component/ca"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	"github.com/metacubex/mihomo/component/resolver"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/transport/tuic"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	"github.com/ruk1ng001/mihomo-mod/component/resolver"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/transport/tuic"
 
 	"github.com/gofrs/uuid/v5"
 	"github.com/metacubex/quic-go"
@@ -144,6 +144,11 @@ func (t *Tuic) dialWithDialer(ctx context.Context, dialer C.Dialer) (transport *
 	transport.SetCreatedConn(true) // auto close conn
 	transport.SetSingleUse(true)   // auto close transport
 	return
+}
+
+// SupportDialerProxy implements C.ProxyAdapter
+func (t *Tuic) SupportDialerProxy() string {
+	return t.option.DialerProxy
 }
 
 func NewTuic(option TuicOption) (*Tuic, error) {

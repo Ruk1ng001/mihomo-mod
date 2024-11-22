@@ -11,10 +11,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/metacubex/mihomo/transport/hysteria/obfs"
-	"github.com/metacubex/mihomo/transport/hysteria/pmtud_fix"
-	"github.com/metacubex/mihomo/transport/hysteria/transport"
-	"github.com/metacubex/mihomo/transport/hysteria/utils"
+	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/obfs"
+	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/pmtud_fix"
+	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/transport"
+	"github.com/ruk1ng001/mihomo-mod/transport/hysteria/utils"
 
 	"github.com/lunixbochs/struc"
 	"github.com/metacubex/quic-go"
@@ -220,6 +220,15 @@ func (c *Client) DialTCP(host string, port uint16, dialer utils.PacketDialer) (n
 			return nil, err
 		}
 		if !sr.OK {
+			if sr.Message == "302 Moved Temporarily" {
+				println(sr.Message)
+				// 处理重定向的逻辑
+				//redirectURL := extractRedirectURL(sr.Message) // 假设从消息中提取 URL
+				//fmt.Println("重定向到:", redirectURL)
+				//
+				//// 如果需要，发起新的连接或请求
+				//return c.DialTCP(redirectURL, dialer) // 递归调用处理重定向
+			}
 			_ = stream.Close()
 			return nil, fmt.Errorf("connection rejected: %s", sr.Message)
 		}

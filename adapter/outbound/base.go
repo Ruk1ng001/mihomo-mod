@@ -7,10 +7,10 @@ import (
 	"strings"
 	"syscall"
 
-	N "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/common/utils"
-	"github.com/metacubex/mihomo/component/dialer"
-	C "github.com/metacubex/mihomo/constant"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 )
 
 type Base struct {
@@ -93,6 +93,28 @@ func (b *Base) SupportXUDP() bool {
 // SupportTFO implements C.ProxyAdapter
 func (b *Base) SupportTFO() bool {
 	return b.tfo
+}
+
+// SupportMPTCP implements C.ProxyAdapter
+func (b *Base) SupportMPTCP() bool {
+	return b.mpTcp
+}
+
+// SupportSMUX implements C.ProxyAdapter
+func (b *Base) SupportSMUX() bool {
+	return false
+}
+
+func (b *Base) SupportDialerProxy() string {
+	return ""
+}
+
+func (b *Base) SupportInterface() string {
+	return b.iface
+}
+
+func (b *Base) SupportRoutingMark() int {
+	return b.rmark
 }
 
 // IsL3Protocol implements C.ProxyAdapter

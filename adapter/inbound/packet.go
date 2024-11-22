@@ -1,8 +1,8 @@
 package inbound
 
 import (
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/transport/socks5"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
 )
 
 // NewPacket is PacketAdapter generator

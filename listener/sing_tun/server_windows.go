@@ -3,8 +3,8 @@ package sing_tun
 import (
 	"time"
 
-	"github.com/metacubex/mihomo/constant/features"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/constant/features"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	tun "github.com/metacubex/sing-tun"
 )

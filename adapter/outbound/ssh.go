@@ -12,10 +12,10 @@ import (
 	"strings"
 	"sync"
 
-	N "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	C "github.com/metacubex/mihomo/constant"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 
 	"github.com/metacubex/randv2"
 	"golang.org/x/crypto/ssh"
@@ -119,6 +119,11 @@ func (s *sshClient) Close() error {
 
 func closeSsh(s *Ssh) {
 	_ = s.client.Close()
+}
+
+// SupportWithDialer implements C.ProxyAdapter
+func (s *Ssh) SupportDialerProxy() string {
+	return s.option.DialerProxy
 }
 
 func NewSsh(option SshOption) (*Ssh, error) {

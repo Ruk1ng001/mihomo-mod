@@ -5,18 +5,19 @@ import (
 	"crypto/tls"
 	"errors"
 	"fmt"
+	"github.com/ruk1ng001/mihomo-mod/transport/vless"
 	"net"
 	"net/http"
 	"strconv"
 
-	"github.com/metacubex/mihomo/component/ca"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	tlsC "github.com/metacubex/mihomo/component/tls"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/transport/gun"
-	"github.com/metacubex/mihomo/transport/shadowsocks/core"
-	"github.com/metacubex/mihomo/transport/trojan"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	tlsC "github.com/ruk1ng001/mihomo-mod/component/tls"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/transport/gun"
+	"github.com/ruk1ng001/mihomo-mod/transport/shadowsocks/core"
+	"github.com/ruk1ng001/mihomo-mod/transport/trojan"
 )
 
 type Trojan struct {
@@ -50,6 +51,8 @@ type TrojanOption struct {
 	GrpcOpts          GrpcOptions    `proxy:"grpc-opts,omitempty"`
 	WSOpts            WSOptions      `proxy:"ws-opts,omitempty"`
 	SSOpts            TrojanSSOption `proxy:"ss-opts,omitempty"`
+	Flow              string         `proxy:"flow,omitempty"`
+	FlowShow          bool           `proxy:"flow-show,omitempty"`
 	ClientFingerprint string         `proxy:"client-fingerprint,omitempty"`
 }
 
@@ -244,6 +247,11 @@ func (t *Trojan) SupportUOT() bool {
 	return true
 }
 
+// SupportDialerProxy implements C.ProxyAdapter
+func (t *Trojan) SupportDialerProxy() string {
+	return t.option.DialerProxy
+}
+
 func NewTrojan(option TrojanOption) (*Trojan, error) {
 	addr := net.JoinHostPort(option.Server, strconv.Itoa(option.Port))
 
@@ -252,12 +260,26 @@ func NewTrojan(option TrojanOption) (*Trojan, error) {
 		ALPN:              option.ALPN,
 		ServerName:        option.Server,
 		SkipCertVerify:    option.SkipCertVerify,
+		FlowShow:          option.FlowShow,
 		Fingerprint:       option.Fingerprint,
 		ClientFingerprint: option.ClientFingerprint,
 	}
 
 	if option.SNI != "" {
 		tOption.ServerName = option.SNI
+	}
+
+	switch option.Network {
+	case "", "tcp":
+		if len(option.Flow) >= 16 {
+			option.Flow = option.Flow[:16]
+			switch option.Flow {
+			case vless.XRO, vless.XRD, vless.XRS:
+				tOption.Flow = option.Flow
+			default:
+				return nil, fmt.Errorf("unsupported xtls flow type: %s", option.Flow)
+			}
+		}
 	}
 
 	t := &Trojan{

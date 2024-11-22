@@ -1,8 +1,8 @@
 package inbound
 
 import (
-	"github.com/metacubex/mihomo/component/auth"
-	authStore "github.com/metacubex/mihomo/listener/auth"
+	"github.com/ruk1ng001/mihomo-mod/component/auth"
+	authStore "github.com/ruk1ng001/mihomo-mod/listener/auth"
 )
 
 type AuthUser struct {

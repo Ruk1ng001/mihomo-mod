@@ -12,10 +12,10 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/metacubex/mihomo/component/ca"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	C "github.com/metacubex/mihomo/constant"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 )
 
 type Http struct {
@@ -90,6 +90,11 @@ func (h *Http) DialContextWithDialer(ctx context.Context, dialer C.Dialer, metad
 // SupportWithDialer implements C.ProxyAdapter
 func (h *Http) SupportWithDialer() C.NetWork {
 	return C.TCP
+}
+
+// SupportDialerProxy implements C.ProxyAdapter
+func (h *Http) SupportDialerProxy() string {
+	return h.option.DialerProxy
 }
 
 func (h *Http) shakeHand(metadata *C.Metadata, rw io.ReadWriter) error {

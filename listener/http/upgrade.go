@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/metacubex/mihomo/adapter/inbound"
-	N "github.com/metacubex/mihomo/common/net"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/transport/socks5"
+	"github.com/ruk1ng001/mihomo-mod/adapter/inbound"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
 )
 
 func isUpgradeRequest(req *http.Request) bool {

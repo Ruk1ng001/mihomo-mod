@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	mihomoHttp "github.com/metacubex/mihomo/component/http"
+	mihomoHttp "github.com/ruk1ng001/mihomo-mod/component/http"
 
 	"golang.org/x/exp/constraints"
 )

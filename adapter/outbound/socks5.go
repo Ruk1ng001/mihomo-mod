@@ -10,11 +10,11 @@ import (
 	"net/netip"
 	"strconv"
 
-	"github.com/metacubex/mihomo/component/ca"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/transport/socks5"
+	"github.com/ruk1ng001/mihomo-mod/component/ca"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/transport/socks5"
 )
 
 type Socks5 struct {
@@ -169,6 +169,11 @@ func (ss *Socks5) ListenPacketContext(ctx context.Context, metadata *C.Metadata,
 	}()
 
 	return newPacketConn(&socksPacketConn{PacketConn: pc, rAddr: bindUDPAddr, tcpConn: c}, ss), nil
+}
+
+// SupportDialerProxy implements C.ProxyAdapter
+func (ss *Socks5) SupportDialerProxy() string {
+	return ss.option.DialerProxy
 }
 
 func NewSocks5(option Socks5Option) (*Socks5, error) {

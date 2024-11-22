@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	M "github.com/sagernet/sing/common/metadata"
 	"github.com/sagernet/sing/common/ntp"

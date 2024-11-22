@@ -7,16 +7,16 @@ import (
 	"net"
 	"strconv"
 
-	N "github.com/metacubex/mihomo/common/net"
-	"github.com/metacubex/mihomo/common/structure"
-	"github.com/metacubex/mihomo/component/dialer"
-	"github.com/metacubex/mihomo/component/proxydialer"
-	"github.com/metacubex/mihomo/component/resolver"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/transport/restls"
-	obfs "github.com/metacubex/mihomo/transport/simple-obfs"
-	shadowtls "github.com/metacubex/mihomo/transport/sing-shadowtls"
-	v2rayObfs "github.com/metacubex/mihomo/transport/v2ray-plugin"
+	N "github.com/ruk1ng001/mihomo-mod/common/net"
+	"github.com/ruk1ng001/mihomo-mod/common/structure"
+	"github.com/ruk1ng001/mihomo-mod/component/dialer"
+	"github.com/ruk1ng001/mihomo-mod/component/proxydialer"
+	"github.com/ruk1ng001/mihomo-mod/component/resolver"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/transport/restls"
+	obfs "github.com/ruk1ng001/mihomo-mod/transport/simple-obfs"
+	shadowtls "github.com/ruk1ng001/mihomo-mod/transport/sing-shadowtls"
+	v2rayObfs "github.com/ruk1ng001/mihomo-mod/transport/v2ray-plugin"
 
 	restlsC "github.com/3andne/restls-client-go"
 	shadowsocks "github.com/metacubex/sing-shadowsocks2"
@@ -194,6 +194,11 @@ func (ss *ShadowSocks) ListenPacketWithDialer(ctx context.Context, dialer C.Dial
 // SupportWithDialer implements C.ProxyAdapter
 func (ss *ShadowSocks) SupportWithDialer() C.NetWork {
 	return C.ALLNet
+}
+
+// SupportDialerProxy implements C.ProxyAdapter
+func (ss *ShadowSocks) SupportDialerProxy() string {
+	return ss.option.DialerProxy
 }
 
 // ListenPacketOnStreamConn implements C.ProxyAdapter

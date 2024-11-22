@@ -17,11 +17,12 @@ func handleVShareLink(names map[string]int, url *url.URL, scheme string, proxy m
 		return errors.New("url.Hostname() is empty")
 	}
 	if url.Port() == "" {
-		return errors.New("url.Port() is empty")
+		proxy["port"] = 443
+	} else {
+		proxy["port"] = url.Port()
 	}
 	proxy["type"] = scheme
 	proxy["server"] = url.Hostname()
-	proxy["port"] = url.Port()
 	proxy["uuid"] = url.User.Username()
 	proxy["udp"] = true
 	tls := strings.ToLower(query.Get("security"))

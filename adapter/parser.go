@@ -3,11 +3,11 @@ package adapter
 import (
 	"fmt"
 
-	tlsC "github.com/metacubex/mihomo/component/tls"
+	tlsC "github.com/ruk1ng001/mihomo-mod/component/tls"
 
-	"github.com/metacubex/mihomo/adapter/outbound"
-	"github.com/metacubex/mihomo/common/structure"
-	C "github.com/metacubex/mihomo/constant"
+	"github.com/ruk1ng001/mihomo-mod/adapter/outbound"
+	"github.com/ruk1ng001/mihomo-mod/common/structure"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 )
 
 func ParseProxy(mapping map[string]any) (C.Proxy, error) {

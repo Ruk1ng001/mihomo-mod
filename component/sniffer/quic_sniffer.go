@@ -8,9 +8,9 @@ import (
 	"errors"
 	"io"
 
-	"github.com/metacubex/mihomo/common/buf"
-	"github.com/metacubex/mihomo/common/utils"
-	C "github.com/metacubex/mihomo/constant"
+	"github.com/ruk1ng001/mihomo-mod/common/buf"
+	"github.com/ruk1ng001/mihomo-mod/common/utils"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
 
 	"github.com/metacubex/quic-go/quicvarint"
 	"golang.org/x/crypto/hkdf"

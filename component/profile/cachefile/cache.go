@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/metacubex/mihomo/component/profile"
-	C "github.com/metacubex/mihomo/constant"
-	"github.com/metacubex/mihomo/log"
+	"github.com/ruk1ng001/mihomo-mod/component/profile"
+	C "github.com/ruk1ng001/mihomo-mod/constant"
+	"github.com/ruk1ng001/mihomo-mod/log"
 
 	"github.com/metacubex/bbolt"
 )

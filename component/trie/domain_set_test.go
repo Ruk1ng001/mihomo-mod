@@ -4,7 +4,7 @@ import (
 	"golang.org/x/exp/slices"
 	"testing"
 
-	"github.com/metacubex/mihomo/component/trie"
+	"github.com/ruk1ng001/mihomo-mod/component/trie"
 	"github.com/stretchr/testify/assert"
 )
 
