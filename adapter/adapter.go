@@ -376,8 +376,6 @@ func (p *Proxy) URLTestDelayAndSpeed(ctx context.Context, url string, expectedSt
 		return
 	}
 
-	defer resp.Body.Close()
-
 	if unifiedDelay {
 		second := time.Now()
 		var ignoredErr error
