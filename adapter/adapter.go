@@ -447,7 +447,7 @@ func (p *Proxy) GETResponse(ctx context.Context, url string) (res *[]byte, err e
 	if err != nil || body == nil {
 		return
 	}
-	*res = body
+	res = &body
 	return
 }
 func NewProxy(adapter C.ProxyAdapter) *Proxy {
