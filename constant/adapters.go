@@ -170,7 +170,8 @@ type Proxy interface {
 	ExtraDelayHistories() map[string]ProxyState
 	LastDelayForTestUrl(url string) uint16
 	URLTest(ctx context.Context, url string, expectedStatus utils.IntRanges[uint16]) (uint16, error)
-	URLTestDelayAndSpeed(ctx context.Context, url string, expectedStatus utils.IntRanges[uint16]) (uint16, float64, error)
+	URLTestDelayAndSpeed(ctx context.Context, url string) (uint16, float64, error)
+	GETResponse(ctx context.Context, url string) (*[]byte, error)
 
 	// Deprecated: use DialContext instead.
 	Dial(metadata *Metadata) (Conn, error)

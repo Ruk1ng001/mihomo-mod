@@ -288,44 +288,7 @@ func (p *Proxy) URLTest(ctx context.Context, url string, expectedStatus utils.In
 	t = uint16(time.Since(start) / time.Millisecond)
 	return
 }
-func (p *Proxy) URLTestDelayAndSpeed(ctx context.Context, url string, expectedStatus utils.IntRanges[uint16]) (t uint16, s float64, err error) {
-	var satisfied bool
-
-	defer func() {
-		alive := err == nil
-		record := C.DelayHistory{Time: time.Now()}
-		if alive {
-			record.Delay = t
-		}
-
-		p.alive.Store(alive)
-		p.history.Put(record)
-		if p.history.Len() > defaultHistoriesNum {
-			p.history.Pop()
-		}
-
-		state, ok := p.extra.Load(url)
-		if !ok {
-			state = &internalProxyState{
-				history: queue.New[C.DelayHistory](defaultHistoriesNum),
-				alive:   atomic.NewBool(true),
-			}
-			p.extra.Store(url, state)
-		}
-
-		if !satisfied {
-			record.Delay = 0
-			alive = false
-		}
-
-		state.alive.Store(alive)
-		state.history.Put(record)
-		if state.history.Len() > defaultHistoriesNum {
-			state.history.Pop()
-		}
-
-	}()
-
+func (p *Proxy) URLTestDelayAndSpeed(ctx context.Context, url string) (t uint16, s float64, err error) {
 	unifiedDelay := UnifiedDelay.Load()
 
 	addr, err := urlToMetadata(url)
@@ -391,14 +354,49 @@ func (p *Proxy) URLTestDelayAndSpeed(ctx context.Context, url string, expectedSt
 			}
 		}
 	}
-
-	satisfied = resp != nil && (expectedStatus == nil || expectedStatus.Check(uint16(resp.StatusCode)))
 	t = uint16(time.Since(start) / time.Millisecond)
 
 	defer resp.Body.Close()
 	written, _ := io.Copy(io.Discard, resp.Body)
 	s = float64(written) / float64(time.Since(start).Microseconds())
 
+	return
+}
+
+func (p *Proxy) GETResponse(ctx context.Context, url string) (res *[]byte, err error) {
+	req, err := http.NewRequest(http.MethodGet, url, nil)
+	if err != nil {
+		return
+	}
+	req = req.WithContext(ctx)
+
+	transport := &http.Transport{
+		// from http.DefaultTransport
+		MaxIdleConns:          100,
+		IdleConnTimeout:       90 * time.Second,
+		TLSHandshakeTimeout:   10 * time.Second,
+		ExpectContinueTimeout: 10 * time.Second,
+		TLSClientConfig:       ca.GetGlobalTLSConfig(&tls.Config{}),
+	}
+
+	client := http.Client{
+		Timeout:   30 * time.Second,
+		Transport: transport,
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			return http.ErrUseLastResponse
+		},
+	}
+
+	defer client.CloseIdleConnections()
+
+	resp, err := client.Do(req)
+
+	if err != nil {
+		return
+	}
+
+	defer resp.Body.Close()
+	*res, err = io.ReadAll(resp.Body)
 	return
 }
 func NewProxy(adapter C.ProxyAdapter) *Proxy {
