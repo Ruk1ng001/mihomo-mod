@@ -5,6 +5,7 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"fmt"
+	"github.com/Ruk1ng001/mihomo-mod/common/convert"
 	"io"
 	"net"
 	"net/http"
@@ -256,6 +257,10 @@ func (p *Proxy) URLTest(ctx context.Context, url string, expectedStatus utils.In
 			return http.ErrUseLastResponse
 		},
 	}
+	req.Header.Set("User-Agent", convert.RandUserAgent())
+	if strings.Contains(p.Addr(), ":") {
+		req.Header.Set("Host", strings.Split(p.Addr(), ":")[0])
+	}
 
 	defer client.CloseIdleConnections()
 
@@ -326,6 +331,10 @@ func (p *Proxy) URLHead(ctx context.Context, url string) (err error) {
 			return http.ErrUseLastResponse
 		},
 	}
+	req.Header.Set("User-Agent", convert.RandUserAgent())
+	if strings.Contains(p.Addr(), ":") {
+		req.Header.Set("Host", strings.Split(p.Addr(), ":")[0])
+	}
 
 	defer client.CloseIdleConnections()
 
@@ -377,6 +386,10 @@ func (p *Proxy) URLTestDelayAndSpeed(ctx context.Context, url string) (t uint16,
 		CheckRedirect: func(req *http.Request, via []*http.Request) error {
 			return http.ErrUseLastResponse
 		},
+	}
+	req.Header.Set("User-Agent", convert.RandUserAgent())
+	if strings.Contains(p.Addr(), ":") {
+		req.Header.Set("Host", strings.Split(p.Addr(), ":")[0])
 	}
 
 	defer client.CloseIdleConnections()
@@ -433,6 +446,10 @@ func (p *Proxy) GETResponse(ctx context.Context, url string) (res *[]byte, err e
 		CheckRedirect: func(req *http.Request, via []*http.Request) error {
 			return http.ErrUseLastResponse
 		},
+	}
+	req.Header.Set("User-Agent", convert.RandUserAgent())
+	if strings.Contains(p.Addr(), ":") {
+		req.Header.Set("Host", strings.Split(p.Addr(), ":")[0])
 	}
 
 	defer client.CloseIdleConnections()
