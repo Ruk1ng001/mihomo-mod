@@ -425,6 +425,19 @@ func (p *Proxy) URLTestDelayAndSpeed(ctx context.Context, url string) (t uint16,
 }
 
 func (p *Proxy) GETResponse(ctx context.Context, url string) (res *[]byte, err error) {
+	addr, err := urlToMetadata(url)
+	if err != nil {
+		return
+	}
+
+	instance, err := p.DialContext(ctx, &addr)
+	if err != nil {
+		return
+	}
+	defer func() {
+		_ = instance.Close()
+	}()
+
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
 		return
@@ -432,6 +445,9 @@ func (p *Proxy) GETResponse(ctx context.Context, url string) (res *[]byte, err e
 	req = req.WithContext(ctx)
 
 	transport := &http.Transport{
+		DialContext: func(context.Context, string, string) (net.Conn, error) {
+			return instance, nil
+		},
 		// from http.DefaultTransport
 		MaxIdleConns:          100,
 		IdleConnTimeout:       90 * time.Second,
