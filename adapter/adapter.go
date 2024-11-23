@@ -444,7 +444,7 @@ func (p *Proxy) GETResponse(ctx context.Context, url string) (res *[]byte, err e
 	defer resp.Body.Close()
 
 	body, err := io.ReadAll(resp.Body)
-	if err != nil {
+	if err != nil || body == nil {
 		return
 	}
 	*res = body
