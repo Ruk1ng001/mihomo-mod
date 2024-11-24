@@ -171,10 +171,14 @@ func (d *Decoder) decodeInt(name string, data any, val reflect.Value) (err error
 			err = fmt.Errorf("cannot parse '%s' as int: %s", name, err)
 		}
 	default:
-		err = fmt.Errorf(
-			"'%s' expected type '%s', got unconvertible type '%s'",
-			name, val.Type(), dataVal.Type(),
-		)
+		if !val.IsValid() || !dataVal.IsValid() {
+			err = fmt.Errorf("invalid reflect value for '%s'", name)
+		} else {
+			err = fmt.Errorf(
+				"'%s' expected type '%s', got unconvertible type '%s'",
+				name, val.Type(), dataVal.Type(),
+			)
+		}
 	}
 	return err
 }
@@ -198,10 +202,14 @@ func (d *Decoder) decodeUint(name string, data any, val reflect.Value) (err erro
 			err = fmt.Errorf("cannot parse '%s' as int: %s", name, err)
 		}
 	default:
-		err = fmt.Errorf(
-			"'%s' expected type '%s', got unconvertible type '%s'",
-			name, val.Type(), dataVal.Type(),
-		)
+		if !val.IsValid() || !dataVal.IsValid() {
+			err = fmt.Errorf("invalid reflect value for '%s'", name)
+		} else {
+			err = fmt.Errorf(
+				"'%s' expected type '%s', got unconvertible type '%s'",
+				name, val.Type(), dataVal.Type(),
+			)
+		}
 	}
 	return err
 }
@@ -225,10 +233,14 @@ func (d *Decoder) decodeFloat(name string, data any, val reflect.Value) (err err
 			err = fmt.Errorf("cannot parse '%s' as int: %s", name, err)
 		}
 	default:
-		err = fmt.Errorf(
-			"'%s' expected type '%s', got unconvertible type '%s'",
-			name, val.Type(), dataVal.Type(),
-		)
+		if !val.IsValid() || !dataVal.IsValid() {
+			err = fmt.Errorf("invalid reflect value for '%s'", name)
+		} else {
+			err = fmt.Errorf(
+				"'%s' expected type '%s', got unconvertible type '%s'",
+				name, val.Type(), dataVal.Type(),
+			)
+		}
 	}
 	return err
 }
@@ -246,10 +258,14 @@ func (d *Decoder) decodeString(name string, data any, val reflect.Value) (err er
 	case isFloat(kind) && d.option.WeaklyTypedInput:
 		val.SetString(strconv.FormatFloat(dataVal.Float(), 'E', -1, dataVal.Type().Bits()))
 	default:
-		err = fmt.Errorf(
-			"'%s' expected type '%s', got unconvertible type '%s'",
-			name, val.Type(), dataVal.Type(),
-		)
+		if !val.IsValid() || !dataVal.IsValid() {
+			err = fmt.Errorf("invalid reflect value for '%s'", name)
+		} else {
+			err = fmt.Errorf(
+				"'%s' expected type '%s', got unconvertible type '%s'",
+				name, val.Type(), dataVal.Type(),
+			)
+		}
 	}
 	return err
 }
@@ -265,10 +281,14 @@ func (d *Decoder) decodeBool(name string, data any, val reflect.Value) (err erro
 	case isUint(kind) && d.option.WeaklyTypedInput:
 		val.SetString(strconv.FormatUint(dataVal.Uint(), 10))
 	default:
-		err = fmt.Errorf(
-			"'%s' expected type '%s', got unconvertible type '%s'",
-			name, val.Type(), dataVal.Type(),
-		)
+		if !val.IsValid() || !dataVal.IsValid() {
+			err = fmt.Errorf("invalid reflect value for '%s'", name)
+		} else {
+			err = fmt.Errorf(
+				"'%s' expected type '%s', got unconvertible type '%s'",
+				name, val.Type(), dataVal.Type(),
+			)
+		}
 	}
 	return err
 }
