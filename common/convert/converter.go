@@ -294,9 +294,14 @@ func ConvertsV2Ray(buf []byte) ([]map[string]any, error) {
 			vmess["network"] = network
 
 			if tls, ok := values["tls"]; ok {
-				tls := strings.ToLower(tls.(string))
-				if strings.HasSuffix(tls, "tls") {
-					vmess["tls"] = true
+				tlsVal, ok := tls.(string)
+				if ok {
+					tlsVal = strings.ToLower(tlsVal)
+					if strings.HasSuffix(tlsVal, "tls") {
+						vmess["tls"] = true
+					}
+				} else {
+					vmess["tls"] = tls.(bool)
 				}
 				if alpn, ok := values["alpn"].(string); ok {
 					vmess["alpn"] = strings.Split(alpn, ",")
