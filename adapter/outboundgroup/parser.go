@@ -23,26 +23,26 @@ var (
 )
 
 type GroupCommonOption struct {
-	outbound.BasicOption
-	Name                string   `group:"name"`
-	Type                string   `group:"type"`
-	Proxies             []string `group:"proxies,omitempty"`
-	Use                 []string `group:"use,omitempty"`
-	URL                 string   `group:"url,omitempty"`
-	Interval            int      `group:"interval,omitempty"`
-	TestTimeout         int      `group:"timeout,omitempty"`
-	MaxFailedTimes      int      `group:"max-failed-times,omitempty"`
-	Lazy                bool     `group:"lazy,omitempty"`
-	DisableUDP          bool     `group:"disable-udp,omitempty"`
-	Filter              string   `group:"filter,omitempty"`
-	ExcludeFilter       string   `group:"exclude-filter,omitempty"`
-	ExcludeType         string   `group:"exclude-type,omitempty"`
-	ExpectedStatus      string   `group:"expected-status,omitempty"`
-	IncludeAll          bool     `group:"include-all,omitempty"`
-	IncludeAllProxies   bool     `group:"include-all-proxies,omitempty"`
-	IncludeAllProviders bool     `group:"include-all-providers,omitempty"`
-	Hidden              bool     `group:"hidden,omitempty"`
-	Icon                string   `group:"icon,omitempty"`
+	outbound.BasicOption          // 继承自 BasicOption 的基本选项
+	Name                 string   `group:"name" yaml:"name"`                                                       // 组的名称
+	Type                 string   `group:"type" yaml:"type"`                                                       // 组的类型
+	Proxies              []string `group:"proxies,omitempty" yaml:"proxies,omitempty"`                             // 代理列表，可选
+	Use                  []string `group:"use,omitempty" yaml:"use,omitempty"`                                     // 使用的选项，可选
+	URL                  string   `group:"url,omitempty" yaml:"url,omitempty"`                                     // 组的 URL，可选
+	Interval             int      `group:"interval,omitempty" yaml:"interval,omitempty"`                           // 检测间隔，可选
+	TestTimeout          int      `group:"timeout,omitempty" yaml:"timeout,omitempty"`                             // 测试超时时间，可选
+	MaxFailedTimes       int      `group:"max-failed-times,omitempty" yaml:"max-failed-times,omitempty"`           // 最大失败次数，可选
+	Lazy                 bool     `group:"lazy,omitempty" yaml:"lazy,omitempty"`                                   // 是否懒加载，可选
+	DisableUDP           bool     `group:"disable-udp,omitempty" yaml:"disable-udp,omitempty"`                     // 是否禁用 UDP，可选
+	Filter               string   `group:"filter,omitempty" yaml:"filter,omitempty"`                               // 过滤器，可选
+	ExcludeFilter        string   `group:"exclude-filter,omitempty" yaml:"exclude-filter,omitempty"`               // 排除的过滤器，可选
+	ExcludeType          string   `group:"exclude-type,omitempty" yaml:"exclude-type,omitempty"`                   // 排除的类型，可选
+	ExpectedStatus       string   `group:"expected-status,omitempty" yaml:"expected-status,omitempty"`             // 期望的状态，可选
+	IncludeAll           bool     `group:"include-all,omitempty" yaml:"include-all,omitempty"`                     // 是否包含所有项，可选
+	IncludeAllProxies    bool     `group:"include-all-proxies,omitempty" yaml:"include-all-proxies,omitempty"`     // 是否包含所有代理，可选
+	IncludeAllProviders  bool     `group:"include-all-providers,omitempty" yaml:"include-all-providers,omitempty"` // 是否包含所有提供者，可选
+	Hidden               bool     `group:"hidden,omitempty" yaml:"hidden,omitempty"`                               // 是否隐藏，可选
+	Icon                 string   `group:"icon,omitempty" yaml:"icon,omitempty"`                                   // 图标，可选
 }
 
 func ParseProxyGroup(config map[string]any, proxyMap map[string]C.Proxy, providersMap map[string]types.ProxyProvider, AllProxies []string, AllProviders []string) (C.ProxyAdapter, error) {
