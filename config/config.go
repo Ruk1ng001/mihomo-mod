@@ -200,232 +200,231 @@ type Config struct {
 }
 
 type RawCors struct {
-	AllowOrigins        []string `yaml:"allow-origins" json:"allow-origins"`
-	AllowPrivateNetwork bool     `yaml:"allow-private-network" json:"allow-private-network"`
+	AllowOrigins        []string `yaml:"allow-origins,omitempty" json:"allow-origins,omitempty"`
+	AllowPrivateNetwork bool     `yaml:"allow-private-network,omitempty" json:"allow-private-network,omitempty"`
 }
 
 type RawDNS struct {
-	Enable                       bool                                `yaml:"enable" json:"enable"`
-	PreferH3                     bool                                `yaml:"prefer-h3" json:"prefer-h3"`
-	IPv6                         bool                                `yaml:"ipv6" json:"ipv6"`
-	IPv6Timeout                  uint                                `yaml:"ipv6-timeout" json:"ipv6-timeout"`
-	UseHosts                     bool                                `yaml:"use-hosts" json:"use-hosts"`
-	UseSystemHosts               bool                                `yaml:"use-system-hosts" json:"use-system-hosts"`
-	RespectRules                 bool                                `yaml:"respect-rules" json:"respect-rules"`
-	NameServer                   []string                            `yaml:"nameserver" json:"nameserver"`
-	Fallback                     []string                            `yaml:"fallback" json:"fallback"`
-	FallbackFilter               RawFallbackFilter                   `yaml:"fallback-filter" json:"fallback-filter"`
-	Listen                       string                              `yaml:"listen" json:"listen"`
-	EnhancedMode                 C.DNSMode                           `yaml:"enhanced-mode" json:"enhanced-mode"`
-	FakeIPRange                  string                              `yaml:"fake-ip-range" json:"fake-ip-range"`
-	FakeIPFilter                 []string                            `yaml:"fake-ip-filter" json:"fake-ip-filter"`
-	FakeIPFilterMode             C.FilterMode                        `yaml:"fake-ip-filter-mode" json:"fake-ip-filter-mode"`
-	DefaultNameserver            []string                            `yaml:"default-nameserver" json:"default-nameserver"`
-	CacheAlgorithm               string                              `yaml:"cache-algorithm" json:"cache-algorithm"`
-	NameServerPolicy             *orderedmap.OrderedMap[string, any] `yaml:"nameserver-policy" json:"nameserver-policy"`
-	ProxyServerNameserver        []string                            `yaml:"proxy-server-nameserver" json:"proxy-server-nameserver"`
-	DirectNameServer             []string                            `yaml:"direct-nameserver" json:"direct-nameserver"`
-	DirectNameServerFollowPolicy bool                                `yaml:"direct-nameserver-follow-policy" json:"direct-nameserver-follow-policy"`
+	Enable                       bool                                `yaml:"enable,omitempty" json:"enable,omitempty"`
+	PreferH3                     bool                                `yaml:"prefer-h3,omitempty" json:"prefer-h3,omitempty"`
+	IPv6                         bool                                `yaml:"ipv6,omitempty" json:"ipv6,omitempty"`
+	IPv6Timeout                  uint                                `yaml:"ipv6-timeout,omitempty" json:"ipv6-timeout,omitempty"`
+	UseHosts                     bool                                `yaml:"use-hosts,omitempty" json:"use-hosts,omitempty"`
+	UseSystemHosts               bool                                `yaml:"use-system-hosts,omitempty" json:"use-system-hosts,omitempty"`
+	RespectRules                 bool                                `yaml:"respect-rules,omitempty" json:"respect-rules,omitempty"`
+	NameServer                   []string                            `yaml:"nameserver,omitempty" json:"nameserver,omitempty"`
+	Fallback                     []string                            `yaml:"fallback,omitempty" json:"fallback,omitempty"`
+	FallbackFilter               RawFallbackFilter                   `yaml:"fallback-filter,omitempty" json:"fallback-filter,omitempty"`
+	Listen                       string                              `yaml:"listen,omitempty" json:"listen,omitempty"`
+	EnhancedMode                 C.DNSMode                           `yaml:"enhanced-mode,omitempty" json:"enhanced-mode,omitempty"`
+	FakeIPRange                  string                              `yaml:"fake-ip-range,omitempty" json:"fake-ip-range,omitempty"`
+	FakeIPFilter                 []string                            `yaml:"fake-ip-filter,omitempty" json:"fake-ip-filter,omitempty"`
+	FakeIPFilterMode             C.FilterMode                        `yaml:"fake-ip-filter-mode,omitempty" json:"fake-ip-filter-mode,omitempty"`
+	DefaultNameserver            []string                            `yaml:"default-nameserver,omitempty" json:"default-nameserver,omitempty"`
+	CacheAlgorithm               string                              `yaml:"cache-algorithm,omitempty" json:"cache-algorithm,omitempty"`
+	NameServerPolicy             *orderedmap.OrderedMap[string, any] `yaml:"nameserver-policy,omitempty" json:"nameserver-policy,omitempty"`
+	ProxyServerNameserver        []string                            `yaml:"proxy-server-nameserver,omitempty" json:"proxy-server-nameserver,omitempty"`
+	DirectNameServer             []string                            `yaml:"direct-nameserver,omitempty" json:"direct-nameserver,omitempty"`
+	DirectNameServerFollowPolicy bool                                `yaml:"direct-nameserver-follow-policy,omitempty" json:"direct-nameserver-follow-policy,omitempty"`
 }
 
 type RawFallbackFilter struct {
-	GeoIP     bool     `yaml:"geoip" json:"geoip"`
-	GeoIPCode string   `yaml:"geoip-code" json:"geoip-code"`
-	IPCIDR    []string `yaml:"ipcidr" json:"ipcidr"`
-	Domain    []string `yaml:"domain" json:"domain"`
-	GeoSite   []string `yaml:"geosite" json:"geosite"`
+	GeoIP     bool     `yaml:"geoip,omitempty" json:"geoip,omitempty"`
+	GeoIPCode string   `yaml:"geoip-code,omitempty" json:"geoip-code,omitempty"`
+	IPCIDR    []string `yaml:"ipcidr,omitempty" json:"ipcidr,omitempty"`
+	Domain    []string `yaml:"domain,omitempty" json:"domain,omitempty"`
+	GeoSite   []string `yaml:"geosite,omitempty" json:"geosite,omitempty"`
 }
 
 type RawClashForAndroid struct {
-	AppendSystemDNS   bool   `yaml:"append-system-dns" json:"append-system-dns"`
-	UiSubtitlePattern string `yaml:"ui-subtitle-pattern" json:"ui-subtitle-pattern"`
+	AppendSystemDNS   bool   `yaml:"append-system-dns,omitempty" json:"append-system-dns,omitempty"`
+	UiSubtitlePattern string `yaml:"ui-subtitle-pattern,omitempty" json:"ui-subtitle-pattern,omitempty"`
 }
 
 type RawNTP struct {
-	Enable        bool   `yaml:"enable" json:"enable"`
-	Server        string `yaml:"server" json:"server"`
-	Port          int    `yaml:"port" json:"port"`
-	Interval      int    `yaml:"interval" json:"interval"`
-	DialerProxy   string `yaml:"dialer-proxy" json:"dialer-proxy"`
-	WriteToSystem bool   `yaml:"write-to-system" json:"write-to-system"`
+	Enable        bool   `yaml:"enable,omitempty" json:"enable,omitempty"`
+	Server        string `yaml:"server,omitempty" json:"server,omitempty"`
+	Port          int    `yaml:"port,omitempty" json:"port,omitempty"`
+	Interval      int    `yaml:"interval,omitempty" json:"interval,omitempty"`
+	DialerProxy   string `yaml:"dialer-proxy,omitempty" json:"dialer-proxy,omitempty"`
+	WriteToSystem bool   `yaml:"write-to-system,omitempty" json:"write-to-system,omitempty"`
 }
 
 type RawTun struct {
-	Enable              bool       `yaml:"enable" json:"enable"`
-	Device              string     `yaml:"device" json:"device"`
-	Stack               C.TUNStack `yaml:"stack" json:"stack"`
-	DNSHijack           []string   `yaml:"dns-hijack" json:"dns-hijack"`
-	AutoRoute           bool       `yaml:"auto-route" json:"auto-route"`
-	AutoDetectInterface bool       `yaml:"auto-detect-interface"`
+	Enable              bool       `yaml:"enable,omitempty" json:"enable,omitempty"`
+	Device              string     `yaml:"device,omitempty" json:"device,omitempty"`
+	Stack               C.TUNStack `yaml:"stack,omitempty" json:"stack,omitempty"`
+	DNSHijack           []string   `yaml:"dns-hijack,omitempty" json:"dns-hijack,omitempty"`
+	AutoRoute           bool       `yaml:"auto-route,omitempty" json:"auto-route,omitempty"`
+	AutoDetectInterface bool       `yaml:"auto-detect-interface,omitempty"`
 
-	MTU        uint32 `yaml:"mtu" json:"mtu,omitempty"`
-	GSO        bool   `yaml:"gso" json:"gso,omitempty"`
-	GSOMaxSize uint32 `yaml:"gso-max-size" json:"gso-max-size,omitempty"`
-	//Inet4Address           []netip.Prefix `yaml:"inet4-address" json:"inet4-address,omitempty"`
-	Inet6Address           []netip.Prefix `yaml:"inet6-address" json:"inet6-address,omitempty"`
-	IPRoute2TableIndex     int            `yaml:"iproute2-table-index" json:"iproute2-table-index,omitempty"`
-	IPRoute2RuleIndex      int            `yaml:"iproute2-rule-index" json:"iproute2-rule-index,omitempty"`
-	AutoRedirect           bool           `yaml:"auto-redirect" json:"auto-redirect,omitempty"`
-	AutoRedirectInputMark  uint32         `yaml:"auto-redirect-input-mark" json:"auto-redirect-input-mark,omitempty"`
-	AutoRedirectOutputMark uint32         `yaml:"auto-redirect-output-mark" json:"auto-redirect-output-mark,omitempty"`
-	StrictRoute            bool           `yaml:"strict-route" json:"strict-route,omitempty"`
-	RouteAddress           []netip.Prefix `yaml:"route-address" json:"route-address,omitempty"`
-	RouteAddressSet        []string       `yaml:"route-address-set" json:"route-address-set,omitempty"`
-	RouteExcludeAddress    []netip.Prefix `yaml:"route-exclude-address" json:"route-exclude-address,omitempty"`
-	RouteExcludeAddressSet []string       `yaml:"route-exclude-address-set" json:"route-exclude-address-set,omitempty"`
-	IncludeInterface       []string       `yaml:"include-interface" json:"include-interface,omitempty"`
-	ExcludeInterface       []string       `yaml:"exclude-interface" json:"exclude-interface,omitempty"`
-	IncludeUID             []uint32       `yaml:"include-uid" json:"include-uid,omitempty"`
-	IncludeUIDRange        []string       `yaml:"include-uid-range" json:"include-uid-range,omitempty"`
-	ExcludeUID             []uint32       `yaml:"exclude-uid" json:"exclude-uid,omitempty"`
-	ExcludeUIDRange        []string       `yaml:"exclude-uid-range" json:"exclude-uid-range,omitempty"`
-	IncludeAndroidUser     []int          `yaml:"include-android-user" json:"include-android-user,omitempty"`
-	IncludePackage         []string       `yaml:"include-package" json:"include-package,omitempty"`
-	ExcludePackage         []string       `yaml:"exclude-package" json:"exclude-package,omitempty"`
-	EndpointIndependentNat bool           `yaml:"endpoint-independent-nat" json:"endpoint-independent-nat,omitempty"`
-	UDPTimeout             int64          `yaml:"udp-timeout" json:"udp-timeout,omitempty"`
-	FileDescriptor         int            `yaml:"file-descriptor" json:"file-descriptor"`
+	MTU                    uint32         `yaml:"mtu,omitempty" json:"mtu,omitempty"`
+	GSO                    bool           `yaml:"gso,omitempty" json:"gso,omitempty"`
+	GSOMaxSize             uint32         `yaml:"gso-max-size,omitempty" json:"gso-max-size,omitempty"`
+	Inet6Address           []netip.Prefix `yaml:"inet6-address,omitempty" json:"inet6-address,omitempty"`
+	IPRoute2TableIndex     int            `yaml:"iproute2-table-index,omitempty" json:"iproute2-table-index,omitempty"`
+	IPRoute2RuleIndex      int            `yaml:"iproute2-rule-index,omitempty" json:"iproute2-rule-index,omitempty"`
+	AutoRedirect           bool           `yaml:"auto-redirect,omitempty" json:"auto-redirect,omitempty"`
+	AutoRedirectInputMark  uint32         `yaml:"auto-redirect-input-mark,omitempty" json:"auto-redirect-input-mark,omitempty"`
+	AutoRedirectOutputMark uint32         `yaml:"auto-redirect-output-mark,omitempty" json:"auto-redirect-output-mark,omitempty"`
+	StrictRoute            bool           `yaml:"strict-route,omitempty" json:"strict-route,omitempty"`
+	RouteAddress           []netip.Prefix `yaml:"route-address,omitempty" json:"route-address,omitempty"`
+	RouteAddressSet        []string       `yaml:"route-address-set,omitempty" json:"route-address-set,omitempty"`
+	RouteExcludeAddress    []netip.Prefix `yaml:"route-exclude-address,omitempty" json:"route-exclude-address,omitempty"`
+	RouteExcludeAddressSet []string       `yaml:"route-exclude-address-set,omitempty" json:"route-exclude-address-set,omitempty"`
+	IncludeInterface       []string       `yaml:"include-interface,omitempty" json:"include-interface,omitempty"`
+	ExcludeInterface       []string       `yaml:"exclude-interface,omitempty" json:"exclude-interface,omitempty"`
+	IncludeUID             []uint32       `yaml:"include-uid,omitempty" json:"include-uid,omitempty"`
+	IncludeUIDRange        []string       `yaml:"include-uid-range,omitempty" json:"include-uid-range,omitempty"`
+	ExcludeUID             []uint32       `yaml:"exclude-uid,omitempty" json:"exclude-uid,omitempty"`
+	ExcludeUIDRange        []string       `yaml:"exclude-uid-range,omitempty" json:"exclude-uid-range,omitempty"`
+	IncludeAndroidUser     []int          `yaml:"include-android-user,omitempty" json:"include-android-user,omitempty"`
+	IncludePackage         []string       `yaml:"include-package,omitempty" json:"include-package,omitempty"`
+	ExcludePackage         []string       `yaml:"exclude-package,omitempty" json:"exclude-package,omitempty"`
+	EndpointIndependentNat bool           `yaml:"endpoint-independent-nat,omitempty" json:"endpoint-independent-nat,omitempty"`
+	UDPTimeout             int64          `yaml:"udp-timeout,omitempty" json:"udp-timeout,omitempty"`
+	FileDescriptor         int            `yaml:"file-descriptor,omitempty" json:"file-descriptor,omitempty"`
 
-	Inet4RouteAddress        []netip.Prefix `yaml:"inet4-route-address" json:"inet4-route-address,omitempty"`
-	Inet6RouteAddress        []netip.Prefix `yaml:"inet6-route-address" json:"inet6-route-address,omitempty"`
-	Inet4RouteExcludeAddress []netip.Prefix `yaml:"inet4-route-exclude-address" json:"inet4-route-exclude-address,omitempty"`
-	Inet6RouteExcludeAddress []netip.Prefix `yaml:"inet6-route-exclude-address" json:"inet6-route-exclude-address,omitempty"`
+	Inet4RouteAddress        []netip.Prefix `yaml:"inet4-route-address,omitempty" json:"inet4-route-address,omitempty"`
+	Inet6RouteAddress        []netip.Prefix `yaml:"inet6-route-address,omitempty" json:"inet6-route-address,omitempty"`
+	Inet4RouteExcludeAddress []netip.Prefix `yaml:"inet4-route-exclude-address,omitempty" json:"inet4-route-exclude-address,omitempty"`
+	Inet6RouteExcludeAddress []netip.Prefix `yaml:"inet6-route-exclude-address,omitempty" json:"inet6-route-exclude-address,omitempty"`
 }
 
 type RawTuicServer struct {
-	Enable                bool              `yaml:"enable" json:"enable"`
-	Listen                string            `yaml:"listen" json:"listen"`
-	Token                 []string          `yaml:"token" json:"token"`
-	Users                 map[string]string `yaml:"users" json:"users,omitempty"`
-	Certificate           string            `yaml:"certificate" json:"certificate"`
-	PrivateKey            string            `yaml:"private-key" json:"private-key"`
-	CongestionController  string            `yaml:"congestion-controller" json:"congestion-controller,omitempty"`
-	MaxIdleTime           int               `yaml:"max-idle-time" json:"max-idle-time,omitempty"`
-	AuthenticationTimeout int               `yaml:"authentication-timeout" json:"authentication-timeout,omitempty"`
-	ALPN                  []string          `yaml:"alpn" json:"alpn,omitempty"`
-	MaxUdpRelayPacketSize int               `yaml:"max-udp-relay-packet-size" json:"max-udp-relay-packet-size,omitempty"`
-	CWND                  int               `yaml:"cwnd" json:"cwnd,omitempty"`
+	Enable                bool              `yaml:"enable,omitempty" json:"enable,omitempty"`
+	Listen                string            `yaml:"listen,omitempty" json:"listen,omitempty"`
+	Token                 []string          `yaml:"token,omitempty" json:"token,omitempty"`
+	Users                 map[string]string `yaml:"users,omitempty" json:"users,omitempty"`
+	Certificate           string            `yaml:"certificate,omitempty" json:"certificate,omitempty"`
+	PrivateKey            string            `yaml:"private-key,omitempty" json:"private-key,omitempty"`
+	CongestionController  string            `yaml:"congestion-controller,omitempty" json:"congestion-controller,omitempty"`
+	MaxIdleTime           int               `yaml:"max-idle-time,omitempty" json:"max-idle-time,omitempty"`
+	AuthenticationTimeout int               `yaml:"authentication-timeout,omitempty" json:"authentication-timeout,omitempty"`
+	ALPN                  []string          `yaml:"alpn,omitempty" json:"alpn,omitempty"`
+	MaxUdpRelayPacketSize int               `yaml:"max-udp-relay-packet-size,omitempty" json:"max-udp-relay-packet-size,omitempty"`
+	CWND                  int               `yaml:"cwnd,omitempty" json:"cwnd,omitempty"`
 }
 
 type RawIPTables struct {
-	Enable           bool     `yaml:"enable" json:"enable"`
-	InboundInterface string   `yaml:"inbound-interface" json:"inbound-interface"`
-	Bypass           []string `yaml:"bypass" json:"bypass"`
-	DnsRedirect      bool     `yaml:"dns-redirect" json:"dns-redirect"`
+	Enable           bool     `yaml:"enable,omitempty" json:"enable,omitempty"`
+	InboundInterface string   `yaml:"inbound-interface,omitempty" json:"inbound-interface,omitempty"`
+	Bypass           []string `yaml:"bypass,omitempty" json:"bypass,omitempty"`
+	DnsRedirect      bool     `yaml:"dns-redirect,omitempty" json:"dns-redirect,omitempty"`
 }
 
 type RawExperimental struct {
-	Fingerprints     []string `yaml:"fingerprints"`
-	QUICGoDisableGSO bool     `yaml:"quic-go-disable-gso"`
-	QUICGoDisableECN bool     `yaml:"quic-go-disable-ecn"`
-	IP4PEnable       bool     `yaml:"dialer-ip4p-convert"`
+	Fingerprints     []string `yaml:"fingerprints,omitempty" json:"fingerprints,omitempty"`
+	QUICGoDisableGSO bool     `yaml:"quic-go-disable-gso,omitempty" json:"quic-go-disable-gso,omitempty"`
+	QUICGoDisableECN bool     `yaml:"quic-go-disable-ecn,omitempty" json:"quic-go-disable-ecn,omitempty"`
+	IP4PEnable       bool     `yaml:"dialer-ip4p-convert,omitempty" json:"dialer-ip4p-convert,omitempty"`
 }
 
 type RawProfile struct {
-	StoreSelected bool `yaml:"store-selected" json:"store-selected"`
-	StoreFakeIP   bool `yaml:"store-fake-ip" json:"store-fake-ip"`
+	StoreSelected bool `yaml:"store-selected,omitempty" json:"store-selected,omitempty"`
+	StoreFakeIP   bool `yaml:"store-fake-ip,omitempty" json:"store-fake-ip,omitempty"`
 }
 
 type RawGeoXUrl struct {
-	GeoIp   string `yaml:"geoip" json:"geoip"`
-	Mmdb    string `yaml:"mmdb" json:"mmdb"`
-	ASN     string `yaml:"asn" json:"asn"`
-	GeoSite string `yaml:"geosite" json:"geosite"`
+	GeoIp   string `yaml:"geoip,omitempty" json:"geoip,omitempty"`
+	Mmdb    string `yaml:"mmdb,omitempty" json:"mmdb,omitempty"`
+	ASN     string `yaml:"asn,omitempty" json:"asn,omitempty"`
+	GeoSite string `yaml:"geosite,omitempty" json:"geosite,omitempty"`
 }
 
 type RawSniffer struct {
-	Enable          bool     `yaml:"enable" json:"enable"`
-	OverrideDest    bool     `yaml:"override-destination" json:"override-destination"`
-	Sniffing        []string `yaml:"sniffing" json:"sniffing"`
-	ForceDomain     []string `yaml:"force-domain" json:"force-domain"`
-	SkipSrcAddress  []string `yaml:"skip-src-address" json:"skip-src-address"`
-	SkipDstAddress  []string `yaml:"skip-dst-address" json:"skip-dst-address"`
-	SkipDomain      []string `yaml:"skip-domain" json:"skip-domain"`
-	Ports           []string `yaml:"port-whitelist" json:"port-whitelist"`
-	ForceDnsMapping bool     `yaml:"force-dns-mapping" json:"force-dns-mapping"`
-	ParsePureIp     bool     `yaml:"parse-pure-ip" json:"parse-pure-ip"`
+	Enable          bool     `yaml:"enable,omitempty" json:"enable,omitempty"`
+	OverrideDest    bool     `yaml:"override-destination,omitempty" json:"override-destination,omitempty"`
+	Sniffing        []string `yaml:"sniffing,omitempty" json:"sniffing,omitempty"`
+	ForceDomain     []string `yaml:"force-domain,omitempty" json:"force-domain,omitempty"`
+	SkipSrcAddress  []string `yaml:"skip-src-address,omitempty" json:"skip-src-address,omitempty"`
+	SkipDstAddress  []string `yaml:"skip-dst-address,omitempty" json:"skip-dst-address,omitempty"`
+	SkipDomain      []string `yaml:"skip-domain,omitempty" json:"skip-domain,omitempty"`
+	Ports           []string `yaml:"port-whitelist,omitempty" json:"port-whitelist,omitempty"`
+	ForceDnsMapping bool     `yaml:"force-dns-mapping,omitempty" json:"force-dns-mapping,omitempty"`
+	ParsePureIp     bool     `yaml:"parse-pure-ip,omitempty" json:"parse-pure-ip,omitempty"`
 
-	Sniff map[string]RawSniffingConfig `yaml:"sniff" json:"sniff"`
+	Sniff map[string]RawSniffingConfig `yaml:"sniff,omitempty" json:"sniff,omitempty"`
 }
 
 type RawSniffingConfig struct {
-	Ports        []string `yaml:"ports" json:"ports"`
-	OverrideDest *bool    `yaml:"override-destination" json:"override-destination"`
+	Ports        []string `yaml:"ports,omitempty" json:"ports,omitempty"`
+	OverrideDest *bool    `yaml:"override-destination,omitempty" json:"override-destination,omitempty"`
 }
 
 type RawTLS struct {
-	Certificate     string   `yaml:"certificate" json:"certificate"`
-	PrivateKey      string   `yaml:"private-key" json:"private-key"`
-	CustomTrustCert []string `yaml:"custom-certifactes" json:"custom-certifactes"`
+	Certificate     string   `yaml:"certificate,omitempty" json:"certificate,omitempty"`
+	PrivateKey      string   `yaml:"private-key,omitempty" json:"private-key,omitempty"`
+	CustomTrustCert []string `yaml:"custom-certifactes,omitempty" json:"custom-certifactes,omitempty"`
 }
 
 type RawConfig struct {
-	Port                    int               `yaml:"port" json:"port"`
-	SocksPort               int               `yaml:"socks-port" json:"socks-port"`
-	RedirPort               int               `yaml:"redir-port" json:"redir-port"`
-	TProxyPort              int               `yaml:"tproxy-port" json:"tproxy-port"`
-	MixedPort               int               `yaml:"mixed-port" json:"mixed-port"`
-	ShadowSocksConfig       string            `yaml:"ss-config" json:"ss-config"`
-	VmessConfig             string            `yaml:"vmess-config" json:"vmess-config"`
-	InboundTfo              bool              `yaml:"inbound-tfo" json:"inbound-tfo"`
-	InboundMPTCP            bool              `yaml:"inbound-mptcp" json:"inbound-mptcp"`
-	Authentication          []string          `yaml:"authentication" json:"authentication"`
-	SkipAuthPrefixes        []netip.Prefix    `yaml:"skip-auth-prefixes" json:"skip-auth-prefixes"`
-	LanAllowedIPs           []netip.Prefix    `yaml:"lan-allowed-ips" json:"lan-allowed-ips"`
-	LanDisAllowedIPs        []netip.Prefix    `yaml:"lan-disallowed-ips" json:"lan-disallowed-ips"`
-	AllowLan                bool              `yaml:"allow-lan" json:"allow-lan"`
-	BindAddress             string            `yaml:"bind-address" json:"bind-address"`
-	Mode                    T.TunnelMode      `yaml:"mode" json:"mode"`
-	UnifiedDelay            bool              `yaml:"unified-delay" json:"unified-delay"`
-	LogLevel                log.LogLevel      `yaml:"log-level" json:"log-level"`
-	IPv6                    bool              `yaml:"ipv6" json:"ipv6"`
-	ExternalController      string            `yaml:"external-controller" json:"external-controller"`
-	ExternalControllerPipe  string            `yaml:"external-controller-pipe" json:"external-controller-pipe"`
-	ExternalControllerUnix  string            `yaml:"external-controller-unix" json:"external-controller-unix"`
-	ExternalControllerTLS   string            `yaml:"external-controller-tls" json:"external-controller-tls"`
-	ExternalControllerCors  RawCors           `yaml:"external-controller-cors" json:"external-controller-cors"`
-	ExternalUI              string            `yaml:"external-ui" json:"external-ui"`
-	ExternalUIURL           string            `yaml:"external-ui-url" json:"external-ui-url"`
-	ExternalUIName          string            `yaml:"external-ui-name" json:"external-ui-name"`
-	ExternalDohServer       string            `yaml:"external-doh-server" json:"external-doh-server"`
-	Secret                  string            `yaml:"secret" json:"secret"`
-	Interface               string            `yaml:"interface-name" json:"interface-name"`
-	RoutingMark             int               `yaml:"routing-mark" json:"routing-mark"`
-	Tunnels                 []LC.Tunnel       `yaml:"tunnels" json:"tunnels"`
-	GeoAutoUpdate           bool              `yaml:"geo-auto-update" json:"geo-auto-update"`
-	GeoUpdateInterval       int               `yaml:"geo-update-interval" json:"geo-update-interval"`
-	GeodataMode             bool              `yaml:"geodata-mode" json:"geodata-mode"`
-	GeodataLoader           string            `yaml:"geodata-loader" json:"geodata-loader"`
-	GeositeMatcher          string            `yaml:"geosite-matcher" json:"geosite-matcher"`
-	TCPConcurrent           bool              `yaml:"tcp-concurrent" json:"tcp-concurrent"`
-	FindProcessMode         P.FindProcessMode `yaml:"find-process-mode" json:"find-process-mode"`
-	GlobalClientFingerprint string            `yaml:"global-client-fingerprint" json:"global-client-fingerprint"`
-	GlobalUA                string            `yaml:"global-ua" json:"global-ua"`
-	ETagSupport             bool              `yaml:"etag-support" json:"etag-support"`
-	KeepAliveIdle           int               `yaml:"keep-alive-idle" json:"keep-alive-idle"`
-	KeepAliveInterval       int               `yaml:"keep-alive-interval" json:"keep-alive-interval"`
-	DisableKeepAlive        bool              `yaml:"disable-keep-alive" json:"disable-keep-alive"`
+	Port                    int               `yaml:"port,omitempty" json:"port,omitempty"`
+	SocksPort               int               `yaml:"socks-port,omitempty" json:"socks-port,omitempty"`
+	RedirPort               int               `yaml:"redir-port,omitempty" json:"redir-port,omitempty"`
+	TProxyPort              int               `yaml:"tproxy-port,omitempty" json:"tproxy-port,omitempty"`
+	MixedPort               int               `yaml:"mixed-port,omitempty" json:"mixed-port,omitempty"`
+	ShadowSocksConfig       string            `yaml:"ss-config,omitempty" json:"ss-config,omitempty"`
+	VmessConfig             string            `yaml:"vmess-config,omitempty" json:"vmess-config,omitempty"`
+	InboundTfo              bool              `yaml:"inbound-tfo,omitempty" json:"inbound-tfo,omitempty"`
+	InboundMPTCP            bool              `yaml:"inbound-mptcp,omitempty" json:"inbound-mptcp,omitempty"`
+	Authentication          []string          `yaml:"authentication,omitempty" json:"authentication,omitempty"`
+	SkipAuthPrefixes        []netip.Prefix    `yaml:"skip-auth-prefixes,omitempty" json:"skip-auth-prefixes,omitempty"`
+	LanAllowedIPs           []netip.Prefix    `yaml:"lan-allowed-ips,omitempty" json:"lan-allowed-ips,omitempty"`
+	LanDisAllowedIPs        []netip.Prefix    `yaml:"lan-disallowed-ips,omitempty" json:"lan-disallowed-ips,omitempty"`
+	AllowLan                bool              `yaml:"allow-lan,omitempty" json:"allow-lan,omitempty"`
+	BindAddress             string            `yaml:"bind-address,omitempty" json:"bind-address,omitempty"`
+	Mode                    T.TunnelMode      `yaml:"mode,omitempty" json:"mode,omitempty"`
+	UnifiedDelay            bool              `yaml:"unified-delay,omitempty" json:"unified-delay,omitempty"`
+	LogLevel                log.LogLevel      `yaml:"log-level,omitempty" json:"log-level,omitempty"`
+	IPv6                    bool              `yaml:"ipv6,omitempty" json:"ipv6,omitempty"`
+	ExternalController      string            `yaml:"external-controller,omitempty" json:"external-controller,omitempty"`
+	ExternalControllerPipe  string            `yaml:"external-controller-pipe,omitempty" json:"external-controller-pipe,omitempty"`
+	ExternalControllerUnix  string            `yaml:"external-controller-unix,omitempty" json:"external-controller-unix,omitempty"`
+	ExternalControllerTLS   string            `yaml:"external-controller-tls,omitempty" json:"external-controller-tls,omitempty"`
+	ExternalControllerCors  RawCors           `yaml:"external-controller-cors,omitempty" json:"external-controller-cors,omitempty"`
+	ExternalUI              string            `yaml:"external-ui,omitempty" json:"external-ui,omitempty"`
+	ExternalUIURL           string            `yaml:"external-ui-url,omitempty" json:"external-ui-url,omitempty"`
+	ExternalUIName          string            `yaml:"external-ui-name,omitempty" json:"external-ui-name,omitempty"`
+	ExternalDohServer       string            `yaml:"external-doh-server,omitempty" json:"external-doh-server,omitempty"`
+	Secret                  string            `yaml:"secret,omitempty" json:"secret,omitempty"`
+	Interface               string            `yaml:"interface-name,omitempty" json:"interface-name,omitempty"`
+	RoutingMark             int               `yaml:"routing-mark,omitempty" json:"routing-mark,omitempty"`
+	Tunnels                 []LC.Tunnel       `yaml:"tunnels,omitempty" json:"tunnels,omitempty"`
+	GeoAutoUpdate           bool              `yaml:"geo-auto-update,omitempty" json:"geo-auto-update,omitempty"`
+	GeoUpdateInterval       int               `yaml:"geo-update-interval,omitempty" json:"geo-update-interval,omitempty"`
+	GeodataMode             bool              `yaml:"geodata-mode,omitempty" json:"geodata-mode,omitempty"`
+	GeodataLoader           string            `yaml:"geodata-loader,omitempty" json:"geodata-loader,omitempty"`
+	GeositeMatcher          string            `yaml:"geosite-matcher,omitempty" json:"geosite-matcher,omitempty"`
+	TCPConcurrent           bool              `yaml:"tcp-concurrent,omitempty" json:"tcp-concurrent,omitempty"`
+	FindProcessMode         P.FindProcessMode `yaml:"find-process-mode,omitempty" json:"find-process-mode,omitempty"`
+	GlobalClientFingerprint string            `yaml:"global-client-fingerprint,omitempty" json:"global-client-fingerprint,omitempty"`
+	GlobalUA                string            `yaml:"global-ua,omitempty" json:"global-ua,omitempty"`
+	ETagSupport             bool              `yaml:"etag-support,omitempty" json:"etag-support,omitempty"`
+	KeepAliveIdle           int               `yaml:"keep-alive-idle,omitempty" json:"keep-alive-idle,omitempty"`
+	KeepAliveInterval       int               `yaml:"keep-alive-interval,omitempty" json:"keep-alive-interval,omitempty"`
+	DisableKeepAlive        bool              `yaml:"disable-keep-alive,omitempty" json:"disable-keep-alive,omitempty"`
 
-	ProxyProvider map[string]map[string]any `yaml:"proxy-providers" json:"proxy-providers"`
-	RuleProvider  map[string]map[string]any `yaml:"rule-providers" json:"rule-providers"`
-	Proxy         []map[string]any          `yaml:"proxies" json:"proxies"`
-	ProxyGroup    []map[string]any          `yaml:"proxy-groups" json:"proxy-groups"`
-	Rule          []string                  `yaml:"rules" json:"rule"`
-	SubRules      map[string][]string       `yaml:"sub-rules" json:"sub-rules"`
-	Listeners     []map[string]any          `yaml:"listeners" json:"listeners"`
-	Hosts         map[string]any            `yaml:"hosts" json:"hosts"`
-	DNS           RawDNS                    `yaml:"dns" json:"dns"`
-	NTP           RawNTP                    `yaml:"ntp" json:"ntp"`
-	Tun           RawTun                    `yaml:"tun" json:"tun"`
-	TuicServer    RawTuicServer             `yaml:"tuic-server" json:"tuic-server"`
-	IPTables      RawIPTables               `yaml:"iptables" json:"iptables"`
-	Experimental  RawExperimental           `yaml:"experimental" json:"experimental"`
-	Profile       RawProfile                `yaml:"profile" json:"profile"`
-	GeoXUrl       RawGeoXUrl                `yaml:"geox-url" json:"geox-url"`
-	Sniffer       RawSniffer                `yaml:"sniffer" json:"sniffer"`
-	TLS           RawTLS                    `yaml:"tls" json:"tls"`
+	ProxyProvider map[string]map[string]any `yaml:"proxy-providers,omitempty" json:"proxy-providers,omitempty"`
+	RuleProvider  map[string]map[string]any `yaml:"rule-providers,omitempty" json:"rule-providers,omitempty"`
+	Proxy         []map[string]any          `yaml:"proxies,omitempty" json:"proxies,omitempty"`
+	ProxyGroup    []map[string]any          `yaml:"proxy-groups,omitempty" json:"proxy-groups,omitempty"`
+	Rule          []string                  `yaml:"rules,omitempty" json:"rules,omitempty"`
+	SubRules      map[string][]string       `yaml:"sub-rules,omitempty" json:"sub-rules,omitempty"`
+	Listeners     []map[string]any          `yaml:"listeners,omitempty" json:"listeners,omitempty"`
+	Hosts         map[string]any            `yaml:"hosts,omitempty" json:"hosts,omitempty"`
+	DNS           RawDNS                    `yaml:"dns,omitempty" json:"dns,omitempty"`
+	NTP           RawNTP                    `yaml:"ntp,omitempty" json:"ntp,omitempty"`
+	Tun           RawTun                    `yaml:"tun,omitempty" json:"tun,omitempty"`
+	TuicServer    RawTuicServer             `yaml:"tuic-server,omitempty" json:"tuic-server,omitempty"`
+	IPTables      RawIPTables               `yaml:"iptables,omitempty" json:"iptables,omitempty"`
+	Experimental  RawExperimental           `yaml:"experimental,omitempty" json:"experimental,omitempty"`
+	Profile       RawProfile                `yaml:"profile,omitempty" json:"profile,omitempty"`
+	GeoXUrl       RawGeoXUrl                `yaml:"geox-url,omitempty" json:"geox-url,omitempty"`
+	Sniffer       RawSniffer                `yaml:"sniffer,omitempty" json:"sniffer,omitempty"`
+	TLS           RawTLS                    `yaml:"tls,omitempty" json:"tls,omitempty"`
 
-	ClashForAndroid RawClashForAndroid `yaml:"clash-for-android" json:"clash-for-android"`
+	ClashForAndroid RawClashForAndroid `yaml:"clash-for-android,omitempty" json:"clash-for-android,omitempty"`
 }
 
 var (

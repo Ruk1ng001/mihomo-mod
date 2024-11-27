@@ -15,7 +15,7 @@ var (
 	errSubPath = errors.New("path is not subpath of home directory")
 )
 
-type ruleProviderSchema struct {
+type RuleProviderSchema struct {
 	Type     string `provider:"type"`
 	Behavior string `provider:"behavior"`
 	Path     string `provider:"path,omitempty"`
@@ -26,7 +26,7 @@ type ruleProviderSchema struct {
 }
 
 func ParseRuleProvider(name string, mapping map[string]interface{}, parse func(tp, payload, target string, params []string, subRules map[string][]C.Rule) (parsed C.Rule, parseErr error)) (P.RuleProvider, error) {
-	schema := &ruleProviderSchema{}
+	schema := &RuleProviderSchema{}
 	decoder := structure.NewDecoder(structure.Option{TagName: "provider", WeaklyTypedInput: true})
 	if err := decoder.Decode(mapping, schema); err != nil {
 		return nil, err
